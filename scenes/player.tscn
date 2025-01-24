@@ -105,3 +105,8 @@ collide_with_bodies = false
 libraries = {
 "": SubResource("AnimationLibrary_auuwx")
 }
+
+[node name="AirDepletionTimer" type="Timer" parent="."]
+
+[connection signal="air_capacity_updated" from="." to="PlayerGUI" method="_on_player_air_capacity_updated"]
+[connection signal="timeout" from="AirDepletionTimer" to="." method="_on_air_depletion_timer_timeout"]

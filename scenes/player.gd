@@ -5,6 +5,8 @@ enum CharacterState {
 	WALKING = 0,
 }
 
+signal air_capacity_updated(new_value)
+
 # All of the actually important stuff
 @onready var head := $head
 @onready var plrGUI := $PlayerGUI
@@ -15,22 +17,32 @@ var currentBody : Interactible3D = null
 var currentState : CharacterState = CharacterState.WALKING
 @onready var SPEED = DEFAULT_SPEED # DEFAULT_SPEED doesn't load until _ready(), so we have to use @onready (you could also just move SPEED a bit to the bottom)
 
+@onready var airDepletionTimer = $AirDepletionTimer
 # Options
 @export var DEFAULT_SPEED := 3
 @export var JUMP_VELOCITY := 2.5
 @export var mouse_sensitivity := 0.1
 @export var SPRINT_SPEED := 3.5
 @export var CROUCH_SPEED := 1.5
+
+var CURRENT_AIR_CAPACITY := 100
+
+const MAX_AIR_CAPACITY := 100
+const MIN_AIR_CAPACITY := 0
+const INCREMENT_AIR_CAPACITY_VALUE = 10
+
+
 var inputEnabled := true # can the player move?
 var aimlookEnabled := true # can the player look around?
 var interactionsEnabled := true # can the player interact with Interactibles3D?
-
 #region Main control flow 
 
 func _ready():
 	$MeshInstance3D.hide()
+	airDepletionTimer.start()
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	GameManager.player = self
+	update_air_capacity(self.CURRENT_AIR_CAPACITY)
 
 func _physics_process(delta: float) -> void:
 	if !inputEnabled:
@@ -106,4 +118,27 @@ func change_state(state : CharacterState):
 	SPEED = DEFAULT_SPEED
 	currentState = state
 
+
+func increase_air_capacity(): 
+	var new_air_capacity = self.CURRENT_AIR_CAPACITY + self.INCREMENT_AIR_CAPACITY_VALUE
+	if new_air_capacity > self.MAX_AIR_CAPACITY:
+		# TOO MUCH AIR
+		new_air_capacity = self.MAX_AIR_CAPACITY
+	update_air_capacity(new_air_capacity)
+
+
+func decrease_air_capacity():
+	var new_air_capacity = self.CURRENT_AIR_CAPACITY - self.INCREMENT_AIR_CAPACITY_VALUE
+	if new_air_capacity < self.MIN_AIR_CAPACITY:
+		# DEATH
+		new_air_capacity = self.MIN_AIR_CAPACITY
+	update_air_capacity(new_air_capacity)
+
+func update_air_capacity(newValue: int) -> void:
+	self.CURRENT_AIR_CAPACITY = newValue
+	air_capacity_updated.emit(CURRENT_AIR_CAPACITY)
+
+func _on_air_depletion_timer_timeout():
+	decrease_air_capacity()
+	
 #endregion

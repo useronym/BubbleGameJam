@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6wmqp0buuk5m"]
+[gd_scene load_steps=6 format=3 uid="uid://c6wmqp0buuk5m"]
 
 [ext_resource type="Texture2D" uid="uid://bulteu43r2r6a" path="res://gfx/crosshair.png" id="1_blv8c"]
 [ext_resource type="Script" path="res://scenes/playerGUI.gd" id="1_r6s6h"]
 [ext_resource type="Script" path="res://scenes/pause_node.gd" id="3_81wm1"]
 [ext_resource type="PackedScene" uid="uid://bs035oor8cgug" path="res://scenes/SettingsWindow.tscn" id="4_48uxn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dldcw"]
+font_size = 48
 
 [node name="PlayerGUI" type="CanvasLayer"]
 script = ExtResource("1_r6s6h")
@@ -30,6 +33,7 @@ offset_top = 12.0
 offset_right = 145.0
 offset_bottom = 35.0
 horizontal_alignment = 1
+uppercase = true
 
 [node name="PauseNode" type="Control" parent="."]
 process_mode = 3
@@ -111,6 +115,14 @@ offset_right = 185.0
 offset_bottom = 94.0
 theme_override_font_sizes/font_size = 18
 text = "hi"
+
+[node name="AirCapacityLabel" type="Label" parent="."]
+offset_left = 911.0
+offset_top = 21.0
+offset_right = 1081.0
+offset_bottom = 90.0
+text = "0"
+label_settings = SubResource("LabelSettings_dldcw")
 
 [connection signal="Closing" from="PauseNode/Settings" to="PauseNode" method="_on_close_button"]
 [connection signal="pressed" from="PauseNode/Main/VBoxContainer/Button" to="PauseNode" method="_unpause"]
