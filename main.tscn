@@ -45,7 +45,6 @@ albedo_color = Color(1, 0, 0, 1)
 size = Vector3(0.272949, 0.172974, 0.234375)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u0l0r"]
-load_path = "res://.godot/imported/fakepngcat.png-a57d57c61e57baa8797b1d04ef4bd076.s3tc.ctex"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6gkoj"]
 albedo_texture = SubResource("CompressedTexture2D_u0l0r")

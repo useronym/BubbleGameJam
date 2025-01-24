@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @onready var label = $TextureRect/Label
+@onready var air_capacity_bar = $AirCapacityLabel
 @onready var debuginfo = $DebugInfoLabel
 const DEBUG_TEMPLATE = "PlayerState: {plrstate}\nPlayerSpeed: {speed}\nGlobal Coordinates (X/Y/Z): {globalpos}\nFPS: {fps}"
 
@@ -8,11 +9,16 @@ const DEBUG_TEMPLATE = "PlayerState: {plrstate}\nPlayerSpeed: {speed}\nGlobal Co
 ## Why we don't edit the label directly? who cares man it's not that big of a deal, it's just +1 picosecond of process time
 func update_text(text : String) -> void:
 	label.text = text
+	
+func update_air_capacity_bar(new_text: String) -> void:
+	air_capacity_bar.text = new_text
 
 func _input(event) -> void:
 	if event.is_action_pressed("debug"):
 		debuginfo.visible = !debuginfo.visible
 		debugLoop()
+		
+	
 
 func debugLoop():
 	while debuginfo.visible:
@@ -23,3 +29,7 @@ func debugLoop():
 			"fps": Engine.get_frames_per_second()
 		})
 		await get_tree().create_timer(.5).timeout
+
+
+func _on_player_air_capacity_updated(new_value: int):
+	update_air_capacity_bar(str(new_value))
