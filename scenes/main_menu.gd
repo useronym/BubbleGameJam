@@ -9,7 +9,7 @@ extends Control
 func _play() -> void:
 	get_tree().change_scene_to_file("res://main.tscn")
 
-## literally copied from game pause settings smh
+### literally copied from game pause settings smh
 func _settings() -> void:
 	settings.show()
 	buttons.hide()
