@@ -3,8 +3,6 @@ extends CharacterBody3D
 
 enum CharacterState {
 	WALKING = 0,
-	SPRINTING = 1,
-	CROUCHING = 2
 }
 
 # All of the actually important stuff
@@ -100,37 +98,12 @@ func _unhandled_input(event : InputEvent):
 
 ## Handles the input for character state changing. 
 func _handle_states():
-	if Input.is_action_just_pressed("crouch"):
-		if currentState == CharacterState.CROUCHING:
-			change_state(CharacterState.WALKING)
-		else:
-			change_state(CharacterState.CROUCHING)
-	elif Input.is_action_pressed("sprint"):
-		if currentState == CharacterState.CROUCHING:
-			return
-		if currentState == CharacterState.SPRINTING:
-			return
-		change_state(CharacterState.SPRINTING)
-	else:
-		if currentState != CharacterState.WALKING and currentState != CharacterState.CROUCHING:
-			change_state(CharacterState.WALKING)
+	if currentState != CharacterState.WALKING:
+		change_state(CharacterState.WALKING)
 
 ## Handles the state changing itself. This function must be fired only once, and not run every single frame. 
 func change_state(state : CharacterState):
-	match state:
-		CharacterState.CROUCHING:
-			animator.play("crouch")
-			SPEED = CROUCH_SPEED
-		CharacterState.SPRINTING:
-			SPEED = SPRINT_SPEED
-			animator.play("sprint")
-		CharacterState.WALKING:
-			if currentState == CharacterState.CROUCHING:
-				animator.play_backwards("crouch")
-			elif currentState == CharacterState.SPRINTING:
-				animator.play_backwards("sprint")
-			SPEED = DEFAULT_SPEED
-	
+	SPEED = DEFAULT_SPEED
 	currentState = state
 
 #endregion

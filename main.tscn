@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://brpt71jl5cg2q" path="res://scenes/player.tscn" id="1_8teri"]
 [ext_resource type="Shader" path="res://shaders/ps1.gdshader" id="1_k7buc"]
-[ext_resource type="Texture2D" uid="uid://ya235vbyvsuk" path="res://test_scene_assets/fakepngcat.png" id="2_87uvm"]
 [ext_resource type="Script" path="res://test_scene_assets/ButtonInteractible.gd" id="2_dgpk1"]
 [ext_resource type="AudioStream" uid="uid://bda1e85y0na7r" path="res://test_scene_assets/miau.ogg" id="3_dq0nh"]
 
@@ -45,8 +44,11 @@ albedo_color = Color(1, 0, 0, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_52idf"]
 size = Vector3(0.272949, 0.172974, 0.234375)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u0l0r"]
+load_path = "res://.godot/imported/fakepngcat.png-a57d57c61e57baa8797b1d04ef4bd076.s3tc.ctex"
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6gkoj"]
-albedo_texture = ExtResource("2_87uvm")
+albedo_texture = SubResource("CompressedTexture2D_u0l0r")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_vcox7"]
 material = SubResource("StandardMaterial3D_6gkoj")
