@@ -102,6 +102,14 @@ target_position = Vector3(0, 0, -0.91)
 collide_with_areas = true
 collide_with_bodies = false
 
+[node name="SpotLight3D" type="SpotLight3D" parent="head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.321173, -0.45239, 0)
+light_color = Color(1, 0.780829, 0.665686, 1)
+light_energy = 3.027
+shadow_enabled = true
+spot_range = 8.4874
+spot_angle = 22.19
+
 [node name="PlayerGUI" parent="." instance=ExtResource("2_ywley")]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
