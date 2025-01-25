@@ -1,10 +1,11 @@
 extends Node3D
 
-signal air_bubbles_breathed_in()
+signal breathed_in()
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$BubbleSound.play()
 	pass # Replace with function body.
 
 
@@ -13,5 +14,6 @@ func _process(delta):
 	pass
 
 
-func _on_bubble_breath_area_3d_area_entered(area):
-	air_bubbles_breathed_in.emit()
+func _on_bubble_breath_area_3d_body_entered(body):
+	breathed_in.emit()
+	queue_free()
