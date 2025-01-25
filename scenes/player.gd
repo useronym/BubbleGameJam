@@ -138,8 +138,9 @@ func _on_air_depletion_timer_timeout():
 	decrease_air_capacity()
 	
 
-func _on_bubbles_manager_bubbles_breathed_in():
+
+func _on_bubble_manager_bubbles_breathed_in():
 	airDepletionTimer.start()
 	increase_air_capacity()
-	
+	pass # Replace with function body.
 #endregion
