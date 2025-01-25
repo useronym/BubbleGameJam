@@ -1,11 +1,6 @@
-extends Node3D
+extends Interactible3D
 
-@onready var start_pos = global_position
-
-@export var speed = 0.1
-@export var range = 0.25
-
-var time = 0
+@onready var note_ui = $Note
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,5 +9,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	time += speed*delta
-	global_position = start_pos + Vector3(0, range * sin(time), 0)
+	pass
+
+
+func _on_interact() -> void:
+	Engine.time_scale = 0
+	$OpenSound.play()
+	note_ui.visible = true
