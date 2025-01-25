@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bk2mg2c1lcykf"]
+[gd_scene load_steps=4 format=3 uid="uid://bk2mg2c1lcykf"]
 
 [ext_resource type="Script" path="res://scenes/item/item_script.gd" id="1_xwot2"]
+[ext_resource type="AudioStream" uid="uid://dqomkyrtulb65" path="res://scenes/item/metal_pick_up_one_shot.wav" id="2_xuxd1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7skui"]
 
@@ -8,7 +9,11 @@
 
 [node name="Area3D" type="Area3D" parent="."]
 script = ExtResource("1_xwot2")
+InteractText = "Press [E] to pick up"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_7skui")
+
+[node name="PickupSound" type="AudioStreamPlayer" parent="Area3D"]
+stream = ExtResource("2_xuxd1")
