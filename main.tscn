@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://piq1qo6dhgdh"]
+[gd_scene load_steps=15 format=3 uid="uid://piq1qo6dhgdh"]
 
 [ext_resource type="PackedScene" uid="uid://brpt71jl5cg2q" path="res://scenes/player.tscn" id="1_8teri"]
 [ext_resource type="Shader" path="res://shaders/ps1.gdshader" id="1_k7buc"]
+[ext_resource type="Texture2D" uid="uid://bfveptx8iejlg" path="res://shaders/damien-ramirez-cg-2.jpg" id="2_lqowu"]
 [ext_resource type="PackedScene" uid="uid://b72hjo0h8mcm6" path="res://scenes/lights.tscn" id="3_r2uqw"]
 [ext_resource type="PackedScene" uid="uid://cn77ildhp66sp" path="res://environment/cornerroad.tscn" id="5_rk2qt"]
 [ext_resource type="PackedScene" uid="uid://dvvyaffq6qj2p" path="res://environment/emptyroad.tscn" id="5_uw7jg"]
@@ -16,6 +17,7 @@ shader_parameter/enabled = true
 shader_parameter/dithering = true
 shader_parameter/colors = 12
 shader_parameter/dither_size = 1
+shader_parameter/noise_tex = ExtResource("2_lqowu")
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_e2q4g"]
 sky_top_color = Color(0.189241, 0.507505, 0.474824, 1)
