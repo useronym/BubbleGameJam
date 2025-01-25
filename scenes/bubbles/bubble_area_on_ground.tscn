@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://k5u4ohxvn3y4"]
+[gd_scene load_steps=11 format=3 uid="uid://dyy7qou5v3pbc"]
 
 [ext_resource type="Script" path="res://scenes/bubbles/bubble_area_on_ground_main.gd" id="1_o6dva"]
 [ext_resource type="Texture2D" uid="uid://de1gmyonix3od" path="res://scenes/bubbles/assets/bubble.png" id="2_5soqg"]

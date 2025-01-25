@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://df7xv0nfo6bja"]
+
+[ext_resource type="Script" path="res://bubbles_manager.gd" id="1_05wxc"]
+
+[node name="BubbleManager" type="Node3D"]
+script = ExtResource("1_05wxc")
