@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dgguda57ajbii" path="res://environment/endroad.tscn" id="5_4ch8v"]
 [ext_resource type="PackedScene" uid="uid://djru8fesjxq8n" path="res://environment/onewallroad.tscn" id="6_366rb"]
 [ext_resource type="PackedScene" uid="uid://d0l8yp4r6apo3" path="res://environment/streightroad.tscn" id="7_88rua"]
-[ext_resource type="PackedScene" uid="uid://d0jvq1crggrcs" path="res://environment/troad.tscn" id="8_wigl6"]
+[ext_resource type="PackedScene" path="res://environment/troad.tscn" id="8_wigl6"]
 
 [node name="level" type="Node3D"]
 

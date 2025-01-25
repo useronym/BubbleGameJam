@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://piq1qo6dhgdh"]
+[gd_scene load_steps=19 format=3 uid="uid://piq1qo6dhgdh"]
 
 [ext_resource type="PackedScene" uid="uid://brpt71jl5cg2q" path="res://scenes/player.tscn" id="1_8teri"]
 [ext_resource type="Shader" path="res://shaders/ps1.gdshader" id="1_k7buc"]
@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://djru8fesjxq8n" path="res://environment/onewallroad.tscn" id="7_ssf3u"]
 [ext_resource type="PackedScene" uid="uid://mtsnhob3ue78" path="res://scenes/level.tscn" id="9_ndpwn"]
 [ext_resource type="PackedScene" uid="uid://df7xv0nfo6bja" path="res://scenes/bubbles/bubble_manager.tscn" id="10_alvmu"]
+[ext_resource type="PackedScene" uid="uid://b2clvwp6pfoxk" path="res://scenes/item/items_manager.tscn" id="13_2j1is"]
+[ext_resource type="PackedScene" uid="uid://bk2mg2c1lcykf" path="res://scenes/item/item.tscn" id="13_o202s"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xegm8"]
 shader = ExtResource("1_k7buc")
@@ -135,5 +137,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8313, 0.69827, -35.2542)
 
 [node name="BubbleAreaOnGround6" parent="BubbleManager" instance=ExtResource("5_teoff")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.83134, 0.69827, -45.2542)
+
+[node name="ItemsManager" parent="." instance=ExtResource("13_2j1is")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.78072)
+
+[node name="ItemHelmet" parent="ItemsManager" instance=ExtResource("13_o202s")]
 
 [connection signal="bubbles_breathed_in" from="BubbleManager" to="SubViewport/Node3D/Player" method="_on_bubble_manager_bubbles_breathed_in"]
