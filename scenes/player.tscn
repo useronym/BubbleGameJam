@@ -1,10 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://brpt71jl5cg2q"]
+[gd_scene load_steps=10 format=3 uid="uid://brpt71jl5cg2q"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_yofdb"]
 [ext_resource type="AudioStream" uid="uid://b7ggktlgopsnw" path="res://environment/audio/walking_loop.wav" id="2_0kegd"]
 [ext_resource type="PackedScene" uid="uid://c6wmqp0buuk5m" path="res://scenes/PlayerGUI.tscn" id="2_ywley"]
-[ext_resource type="PackedScene" uid="uid://dcdh460c80rd" path="res://scenes/vfx/floatingParticulates.tscn" id="4_calqc"]
-[ext_resource type="AudioStream" uid="uid://cei0len1b87su" path="res://scenes/drowning_one_shot.wav" id="5_cbsgl"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_jse87"]
 
@@ -126,13 +124,5 @@ libraries = {
 
 [node name="AirDepletionTimer" type="Timer" parent="."]
 
-[node name="FloatingParticulates" parent="." instance=ExtResource("4_calqc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.77646, 0)
-
-[node name="DeathSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_cbsgl")
-volume_db = 8.0
-
 [connection signal="air_capacity_updated" from="." to="PlayerGUI" method="_on_player_air_capacity_updated"]
-[connection signal="character_died" from="." to="PlayerGUI" method="_on_player_character_died"]
 [connection signal="timeout" from="AirDepletionTimer" to="." method="_on_air_depletion_timer_timeout"]

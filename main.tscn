@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://piq1qo6dhgdh"]
+[gd_scene load_steps=28 format=3 uid="uid://piq1qo6dhgdh"]
 
 [ext_resource type="PackedScene" uid="uid://brpt71jl5cg2q" path="res://scenes/player.tscn" id="1_8teri"]
 [ext_resource type="Shader" path="res://shaders/ps1.gdshader" id="1_k7buc"]
@@ -13,12 +13,15 @@
 [ext_resource type="PackedScene" uid="uid://mtsnhob3ue78" path="res://scenes/level.tscn" id="9_ndpwn"]
 [ext_resource type="PackedScene" uid="uid://df7xv0nfo6bja" path="res://scenes/bubbles/bubble_manager.tscn" id="10_alvmu"]
 [ext_resource type="PackedScene" uid="uid://b2clvwp6pfoxk" path="res://scenes/item/items_manager.tscn" id="13_2j1is"]
-[ext_resource type="PackedScene" uid="uid://8ctxyxkkmgeo" path="res://scenes/item/item_suit.tscn" id="15_3d437"]
-[ext_resource type="PackedScene" uid="uid://nw1hiirwbbl5" path="res://scenes/item/item_helmet.tscn" id="15_pxotq"]
-[ext_resource type="PackedScene" uid="uid://c0k22utsto20l" path="res://scenes/item/item_tank.tscn" id="16_yh77s"]
-[ext_resource type="PackedScene" uid="uid://bk2mg2c1lcykf" path="res://scenes/item/item.tscn" id="13_o202s"]
 [ext_resource type="AudioStream" uid="uid://6hooqjm4cwgd" path="res://environment/audio/bubble_env.wav" id="15_0f3oo"]
+[ext_resource type="PackedScene" path="res://scenes/item/item_suit.tscn" id="15_3d437"]
+[ext_resource type="PackedScene" path="res://scenes/item/item_helmet.tscn" id="15_pxotq"]
 [ext_resource type="AudioStream" uid="uid://bm5n0nfltcnio" path="res://environment/audio/drum_env.wav" id="16_kvdhs"]
+[ext_resource type="PackedScene" path="res://scenes/item/item_tank.tscn" id="16_yh77s"]
+[ext_resource type="AudioStream" uid="uid://bw4q73n10c0ss" path="res://environment/audio/harmony_1.wav" id="19_xrs77"]
+[ext_resource type="AudioStream" uid="uid://d34auphr31u7" path="res://environment/audio/harmony_2.wav" id="20_2qe0c"]
+[ext_resource type="AudioStream" uid="uid://cd064vddnu426" path="res://environment/audio/harmony_3.wav" id="21_r51fk"]
+[ext_resource type="AudioStream" uid="uid://3n2bdjdfy8yk" path="res://environment/audio/harmony_4.wav" id="22_q7mg7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xegm8"]
 shader = ExtResource("1_k7buc")
@@ -183,15 +186,42 @@ transform = Transform3D(-0.149777, 0.496719, -0.85489, 0, 0.864643, 0.502386, 0.
 
 [node name="Audio" type="Node3D" parent="."]
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
+[node name="Background F" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("15_0f3oo")
 autoplay = true
 script = SubResource("GDScript_u8s5s")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Audio"]
+[node name="Drum" type="AudioStreamPlayer3D" parent="Audio"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.54752)
 stream = ExtResource("16_kvdhs")
-volume_db = 3.0
+autoplay = true
+
+[node name="Harmony 1" type="AudioStreamPlayer3D" parent="Audio"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.73963, 0, -53.1486)
+stream = ExtResource("19_xrs77")
+volume_db = -12.0
+unit_size = 1.0
+autoplay = true
+
+[node name="Harmony 2" type="AudioStreamPlayer3D" parent="Audio"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.1999, 0, -30.2605)
+stream = ExtResource("20_2qe0c")
+volume_db = -12.0
+unit_size = 1.0
+autoplay = true
+
+[node name="Harmony 3" type="AudioStreamPlayer3D" parent="Audio"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.1748, 0, -27.6709)
+stream = ExtResource("21_r51fk")
+volume_db = -18.0
+unit_size = 1.0
+autoplay = true
+
+[node name="Harmony 4" type="AudioStreamPlayer3D" parent="Audio"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.23484, 0.578111, -51.0287)
+stream = ExtResource("22_q7mg7")
+volume_db = -6.0
+unit_size = 2.5
 autoplay = true
 
 [connection signal="bubbles_breathed_in" from="BubbleManager" to="SubViewport/Node3D/Player" method="_on_bubble_manager_bubbles_breathed_in"]
