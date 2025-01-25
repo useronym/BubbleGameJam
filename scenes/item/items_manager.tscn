@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://b2clvwp6pfoxk"]
+[gd_scene load_steps=2 format=3 uid="uid://b2clvwp6pfoxk"]
+
+[ext_resource type="Script" path="res://scenes/item/items_manager.gd" id="1_tyhaq"]
 
 [node name="ItemsManager" type="Node3D"]
+script = ExtResource("1_tyhaq")
