@@ -95,15 +95,45 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, 6)
 [node name="BubbleManager" parent="." instance=ExtResource("10_alvmu")]
 
 [node name="BubbleAreaOnGround" parent="BubbleManager" instance=ExtResource("5_teoff")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.115648, -4.58488)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0.69827, -25.5849)
+
+[node name="BubbleAreaOnGround8" parent="BubbleManager" instance=ExtResource("5_teoff")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0.69827, -29.5849)
+
+[node name="BubbleAreaOnGround14" parent="BubbleManager" instance=ExtResource("5_teoff")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.69827, -30.5849)
+
+[node name="BubbleAreaOnGround9" parent="BubbleManager" instance=ExtResource("5_teoff")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.69827, -20.5849)
+
+[node name="BubbleAreaOnGround10" parent="BubbleManager" instance=ExtResource("5_teoff")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.69827, -40.5849)
+
+[node name="BubbleAreaOnGround11" parent="BubbleManager" instance=ExtResource("5_teoff")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.69827, -40.5849)
+
+[node name="BubbleAreaOnGround12" parent="BubbleManager" instance=ExtResource("5_teoff")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0.69827, -25.5849)
+
+[node name="BubbleAreaOnGround13" parent="BubbleManager" instance=ExtResource("5_teoff")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.69827, -0.5849)
 
 [node name="BubbleAreaOnGround2" parent="BubbleManager" instance=ExtResource("5_teoff")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.115648, -2.84915)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.738281, 0.69827, -7.84915)
+
+[node name="BubbleAreaOnGround7" parent="BubbleManager" instance=ExtResource("5_teoff")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.69827, 6.15085)
 
 [node name="BubbleAreaOnGround3" parent="BubbleManager" instance=ExtResource("5_teoff")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.72639, 0.115648, -2.84915)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27361, 0.69827, -24.8491)
 
 [node name="BubbleAreaOnGround4" parent="BubbleManager" instance=ExtResource("5_teoff")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.16866, 0.115648, -1.25415)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.83134, 0.69827, -15.2542)
+
+[node name="BubbleAreaOnGround5" parent="BubbleManager" instance=ExtResource("5_teoff")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8313, 0.69827, -35.2542)
+
+[node name="BubbleAreaOnGround6" parent="BubbleManager" instance=ExtResource("5_teoff")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.83134, 0.69827, -45.2542)
 
 [connection signal="bubbles_breathed_in" from="BubbleManager" to="SubViewport/Node3D/Player" method="_on_bubble_manager_bubbles_breathed_in"]
