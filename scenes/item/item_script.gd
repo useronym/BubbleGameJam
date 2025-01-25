@@ -5,10 +5,13 @@ extends Interactible3D
 func _ready():
 	pass # Replace with function body.
 
-func _interact():
-	
-	pass
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	pass
+
+
+func _on_on_interact() -> void:
+	$PickupSound.play()
+	## TODO: increase some global counter
+	$CollisionShape3D.free()
 	pass

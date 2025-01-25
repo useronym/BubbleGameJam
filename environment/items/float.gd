@@ -1,8 +1,10 @@
-extends MeshInstance3D
+extends Node3D
 
 @onready var start_pos = global_position
-var speed = 0.1
-var range = 0.25
+
+@export var speed = 0.1
+@export var range = 0.25
+
 var time = 0
 
 # Called when the node enters the scene tree for the first time.

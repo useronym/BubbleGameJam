@@ -131,13 +131,19 @@ func decrease_air_capacity():
 	var new_air_capacity = self.CURRENT_AIR_CAPACITY - self.DECREMENT_AIR_CAPACITY_VALUE_SECOND
 	if new_air_capacity < self.MIN_AIR_CAPACITY:
 		# DEATH
-		character_died.emit()
+		player_death()
+		$AirDepletionTimer.stop()
 		new_air_capacity = self.MIN_AIR_CAPACITY
 	update_air_capacity(new_air_capacity)
 
 func update_air_capacity(newValue: int) -> void:
 	self.CURRENT_AIR_CAPACITY = newValue
 	air_capacity_updated.emit(newValue)
+	
+func player_death():
+	character_died.emit()
+	await get_tree().create_timer(5).timeout
+	get_tree().change_scene_to_file("res://main.tscn")
 
 func _on_air_depletion_timer_timeout():
 	decrease_air_capacity()

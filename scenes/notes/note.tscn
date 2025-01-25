@@ -1,87 +1,35 @@
-[gd_scene load_steps=3 format=3 uid="uid://2fr2e1iusn1b"]
+[gd_scene load_steps=7 format=3 uid="uid://c4mslqp868uk4"]
 
-[ext_resource type="Texture2D" uid="uid://m0o0dmdeuiog" path="res://scenes/notes/assets/soggy_paper_test.jpg" id="1_l8kr5"]
+[ext_resource type="Script" path="res://scenes/notes/note.gd" id="1_614se"]
+[ext_resource type="PackedScene" uid="uid://rd31xnvoq5y6" path="res://scenes/notes/assets/letter.fbx" id="2_aldbs"]
+[ext_resource type="PackedScene" uid="uid://2fr2e1iusn1b" path="res://scenes/notes/noteGUI.tscn" id="3_x5v2b"]
+[ext_resource type="Script" path="res://environment/items/float.gd" id="3_y71og"]
+[ext_resource type="AudioStream" uid="uid://t5whlfuqx6hn" path="res://scenes/notes/assets/paper_pick_up_one_shot.wav" id="4_tpg73"]
 
-[sub_resource type="FontFile" id="FontFile_qqhjj"]
-subpixel_positioning = 0
-msdf_pixel_range = 14
-msdf_size = 128
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/51/0/ascent = 0.0
-cache/0/51/0/descent = 0.0
-cache/0/51/0/underline_position = 0.0
-cache/0/51/0/underline_thickness = 0.0
-cache/0/51/0/scale = 1.0
-cache/0/61/0/ascent = 0.0
-cache/0/61/0/descent = 0.0
-cache/0/61/0/underline_position = 0.0
-cache/0/61/0/underline_thickness = 0.0
-cache/0/61/0/scale = 1.0
-cache/0/71/0/ascent = 0.0
-cache/0/71/0/descent = 0.0
-cache/0/71/0/underline_position = 0.0
-cache/0/71/0/underline_thickness = 0.0
-cache/0/71/0/scale = 1.0
-cache/0/81/0/ascent = 0.0
-cache/0/81/0/descent = 0.0
-cache/0/81/0/underline_position = 0.0
-cache/0/81/0/underline_thickness = 0.0
-cache/0/81/0/scale = 1.0
-cache/0/91/0/ascent = 0.0
-cache/0/91/0/descent = 0.0
-cache/0/91/0/underline_position = 0.0
-cache/0/91/0/underline_thickness = 0.0
-cache/0/91/0/scale = 1.0
-cache/0/101/0/ascent = 0.0
-cache/0/101/0/descent = 0.0
-cache/0/101/0/underline_position = 0.0
-cache/0/101/0/underline_thickness = 0.0
-cache/0/101/0/scale = 1.0
-cache/0/111/0/ascent = 0.0
-cache/0/111/0/descent = 0.0
-cache/0/111/0/underline_position = 0.0
-cache/0/111/0/underline_thickness = 0.0
-cache/0/111/0/scale = 1.0
-cache/0/12/0/ascent = 0.0
-cache/0/12/0/descent = 0.0
-cache/0/12/0/underline_position = 0.0
-cache/0/12/0/underline_thickness = 0.0
-cache/0/12/0/scale = 1.0
-cache/0/24/0/ascent = 0.0
-cache/0/24/0/descent = 0.0
-cache/0/24/0/underline_position = 0.0
-cache/0/24/0/underline_thickness = 0.0
-cache/0/24/0/scale = 1.0
+[sub_resource type="BoxShape3D" id="BoxShape3D_7skui"]
+size = Vector3(0.42334, 1.27557, 0.447144)
 
-[node name="Note" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Item" type="Node3D"]
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 265.0
-offset_top = 89.0
-offset_right = 817.0
-offset_bottom = 559.0
-texture = ExtResource("1_l8kr5")
-expand_mode = 2
+[node name="Area3D" type="Area3D" parent="."]
+script = ExtResource("1_614se")
+InteractText = "Press [E] to read"
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_left = 311.0
-offset_top = 153.0
-offset_right = 779.0
-offset_bottom = 479.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = SubResource("FontFile_qqhjj")
-theme_override_font_sizes/normal_font_size = 24
-text = "Bla bla bla bla"
-scroll_active = false
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28833, 0.637787, 0.276428)
+shape = SubResource("BoxShape3D_7skui")
+
+[node name="letter" parent="Area3D/CollisionShape3D" instance=ExtResource("2_aldbs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.281406, 0)
+script = ExtResource("3_y71og")
+speed = 0.2
+range = 0.15
+
+[node name="OpenSound" type="AudioStreamPlayer" parent="Area3D"]
+stream = ExtResource("4_tpg73")
+bus = &"SFX"
+
+[node name="Note" parent="Area3D" instance=ExtResource("3_x5v2b")]
+visible = false
+
+[connection signal="OnInteract" from="Area3D" to="Area3D" method="_on_interact"]

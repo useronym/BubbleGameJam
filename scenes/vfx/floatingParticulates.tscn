@@ -10,7 +10,7 @@ curve = SubResource("Curve_1vqsu")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lcxfb"]
 emission_shape = 3
-emission_box_extents = Vector3(2.5, 1, 2.5)
+emission_box_extents = Vector3(5, 1, 5)
 direction = Vector3(0, -1, 0)
 spread = 90.0
 initial_velocity_min = 0.01
@@ -31,7 +31,7 @@ size = Vector2(0.02, 0.02)
 [node name="FloatingParticulates" type="Node3D"]
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
-amount = 50
+amount = 200
 lifetime = 10.0
 process_material = SubResource("ParticleProcessMaterial_lcxfb")
 draw_pass_1 = SubResource("QuadMesh_13lq8")
