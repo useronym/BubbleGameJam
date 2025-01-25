@@ -12,17 +12,17 @@ func _unhandled_input(event: InputEvent) -> void:
 		match Input.mouse_mode:
 			Input.MOUSE_MODE_CAPTURED:
 				Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-				get_tree().paused = true
+				Engine.time_scale = 0
 				self.show()
 			Input.MOUSE_MODE_VISIBLE:
 				Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-				get_tree().paused = false
+				Engine.time_scale = 1
 				self.hide()
 
 
 func _unpause() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	get_tree().paused = false
+	Engine.time_scale = 1
 	self.hide()
 
 func _settings() -> void:
@@ -30,7 +30,7 @@ func _settings() -> void:
 	settingsPanel.show()
 
 func _quit() -> void:
-	get_tree().paused = false
+	Engine.time_scale = 1
 	get_tree().change_scene_to_file("res://scenes/mainMenu.tscn")
 
 func _actually_quit() -> void:
