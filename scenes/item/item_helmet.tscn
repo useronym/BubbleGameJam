@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://nw1hiirwbbl5"]
+
+[ext_resource type="PackedScene" uid="uid://bk2mg2c1lcykf" path="res://scenes/item/item.tscn" id="1_6h7yf"]
+[ext_resource type="PackedScene" uid="uid://b44wtk5w8l5oy" path="res://environment/suit/collectable_helmet.fbx" id="2_y08g0"]
+
+[node name="Item" instance=ExtResource("1_6h7yf")]
+
+[node name="collectable_helmet" parent="Area3D/CollisionShape3D" index="0" instance=ExtResource("2_y08g0")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)

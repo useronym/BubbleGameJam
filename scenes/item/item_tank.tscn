@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0k22utsto20l"]
+
+[ext_resource type="PackedScene" uid="uid://bk2mg2c1lcykf" path="res://scenes/item/item.tscn" id="1_3mmv8"]
+[ext_resource type="PackedScene" uid="uid://c1mhq1c6pssy8" path="res://environment/suit/collectable_tank.fbx" id="2_duu5l"]
+
+[node name="Item" instance=ExtResource("1_3mmv8")]
+
+[node name="collectable_tank" parent="Area3D/CollisionShape3D" index="0" instance=ExtResource("2_duu5l")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)

@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bk2mg2c1lcykf"]
+[gd_scene load_steps=3 format=3 uid="uid://bk2mg2c1lcykf"]
 
 [ext_resource type="Script" path="res://scenes/item/item_script.gd" id="1_xwot2"]
-[ext_resource type="PackedScene" uid="uid://b44wtk5w8l5oy" path="res://environment/suit/collectable_helmet.fbx" id="2_3jyd1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7skui"]
 
@@ -13,6 +12,3 @@ script = ExtResource("1_xwot2")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_7skui")
-
-[node name="collectable_helmet" parent="Area3D/CollisionShape3D" instance=ExtResource("2_3jyd1")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.21843, 0)

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://8ctxyxkkmgeo"]
+
+[ext_resource type="PackedScene" uid="uid://bk2mg2c1lcykf" path="res://scenes/item/item.tscn" id="1_syu5k"]
+[ext_resource type="PackedScene" uid="uid://22ivwqdc0xg6" path="res://environment/suit/collectable_suit.fbx" id="2_wikrj"]
+
+[node name="Item" instance=ExtResource("1_syu5k")]
+
+[node name="collectable_suit" parent="Area3D/CollisionShape3D" index="0" instance=ExtResource("2_wikrj")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -0.478955, 0)
