@@ -1,17 +1,18 @@
-[gd_scene load_steps=28 format=3 uid="uid://piq1qo6dhgdh"]
+[gd_scene load_steps=24 format=3 uid="uid://piq1qo6dhgdh"]
 
 [ext_resource type="PackedScene" uid="uid://brpt71jl5cg2q" path="res://scenes/player.tscn" id="1_8teri"]
 [ext_resource type="Shader" path="res://shaders/ps1.gdshader" id="1_k7buc"]
 [ext_resource type="Texture2D" uid="uid://bfveptx8iejlg" path="res://shaders/damien-ramirez-cg-2.jpg" id="2_l2tep"]
+[ext_resource type="Script" path="res://resize_viewport.gd" id="3_g6vh3"]
 [ext_resource type="PackedScene" uid="uid://b72hjo0h8mcm6" path="res://scenes/lights.tscn" id="3_r2uqw"]
 [ext_resource type="PackedScene" uid="uid://dyy7qou5v3pbc" path="res://scenes/bubbles/bubble_area_on_ground.tscn" id="5_teoff"]
 [ext_resource type="PackedScene" uid="uid://mtsnhob3ue78" path="res://scenes/level.tscn" id="9_ndpwn"]
 [ext_resource type="PackedScene" uid="uid://df7xv0nfo6bja" path="res://scenes/bubbles/bubble_manager.tscn" id="10_alvmu"]
 [ext_resource type="PackedScene" uid="uid://b2clvwp6pfoxk" path="res://scenes/item/items_manager.tscn" id="13_2j1is"]
 [ext_resource type="AudioStream" uid="uid://6hooqjm4cwgd" path="res://environment/audio/bubble_env.wav" id="15_0f3oo"]
-[ext_resource type="PackedScene" path="res://scenes/item/item_suit.tscn" id="15_3d437"]
-[ext_resource type="PackedScene" path="res://scenes/item/item_helmet.tscn" id="15_pxotq"]
-[ext_resource type="PackedScene" path="res://scenes/item/item_tank.tscn" id="16_yh77s"]
+[ext_resource type="PackedScene" uid="uid://8ctxyxkkmgeo" path="res://scenes/item/item_suit.tscn" id="15_3d437"]
+[ext_resource type="PackedScene" uid="uid://nw1hiirwbbl5" path="res://scenes/item/item_helmet.tscn" id="15_pxotq"]
+[ext_resource type="PackedScene" uid="uid://c0k22utsto20l" path="res://scenes/item/item_tank.tscn" id="16_yh77s"]
 [ext_resource type="AudioStream" uid="uid://bw4q73n10c0ss" path="res://environment/audio/harmony_1.wav" id="19_xrs77"]
 [ext_resource type="AudioStream" uid="uid://d34auphr31u7" path="res://environment/audio/harmony_2.wav" id="20_2qe0c"]
 [ext_resource type="AudioStream" uid="uid://cd064vddnu426" path="res://environment/audio/harmony_3.wav" id="21_r51fk"]
@@ -70,16 +71,17 @@ func _process(delta):
 [node name="SubViewportContainer" type="SubViewportContainer"]
 material = SubResource("ShaderMaterial_xegm8")
 offset_right = 1152.0
-offset_bottom = 646.0
+offset_bottom = 648.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch = true
+script = ExtResource("3_g6vh3")
 
 [node name="SubViewport" type="SubViewport" parent="."]
 handle_input_locally = false
 scaling_3d_scale = 0.25
 audio_listener_enable_3d = true
-size = Vector2i(1152, 646)
+size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
 [node name="Node3D" type="Node3D" parent="SubViewport"]
