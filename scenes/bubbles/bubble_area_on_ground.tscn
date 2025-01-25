@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://k5u4ohxvn3y4"]
+
+[ext_resource type="Script" path="res://scenes/bubbles/bubble_area_on_ground_main.gd" id="1_o6dva"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_28qh8"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_ebdl4"]
+
+[node name="BubbleAreaOnGround" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("1_o6dva")
+
+[node name="BubbleBreathArea3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BubbleBreathArea3D"]
+shape = SubResource("CylinderShape3D_28qh8")
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="Node3D"]
+texture = SubResource("ImageTexture_ebdl4")
+
+[connection signal="area_entered" from="BubbleBreathArea3D" to="." method="_on_bubble_breath_area_3d_area_entered"]

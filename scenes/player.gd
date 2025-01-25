@@ -6,6 +6,7 @@ enum CharacterState {
 }
 
 signal air_capacity_updated(new_value)
+signal character_died()
 
 # All of the actually important stuff
 @onready var head := $head
@@ -19,11 +20,8 @@ var currentState : CharacterState = CharacterState.WALKING
 
 @onready var airDepletionTimer = $AirDepletionTimer
 # Options
-@export var DEFAULT_SPEED := 3
-@export var JUMP_VELOCITY := 2.5
+@export var DEFAULT_SPEED := 2
 @export var mouse_sensitivity := 0.1
-@export var SPRINT_SPEED := 3.5
-@export var CROUCH_SPEED := 1.5
 
 var CURRENT_AIR_CAPACITY := 100
 
@@ -50,9 +48,6 @@ func _physics_process(delta: float) -> void:
 	
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-	
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
 	
 	var input_dir := Input.get_vector("left", "right", "up", "down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
@@ -131,6 +126,7 @@ func decrease_air_capacity():
 	var new_air_capacity = self.CURRENT_AIR_CAPACITY - self.INCREMENT_AIR_CAPACITY_VALUE
 	if new_air_capacity < self.MIN_AIR_CAPACITY:
 		# DEATH
+		character_died.emit()
 		new_air_capacity = self.MIN_AIR_CAPACITY
 	update_air_capacity(new_air_capacity)
 
