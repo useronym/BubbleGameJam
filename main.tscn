@@ -218,10 +218,10 @@ unit_size = 1.0
 autoplay = true
 
 [node name="Harmony 4" type="AudioStreamPlayer3D" parent="Audio"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.23484, 0, -50.748)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.23484, 0.578111, -51.0287)
 stream = ExtResource("22_q7mg7")
 volume_db = -6.0
-unit_size = 2.0
+unit_size = 2.5
 autoplay = true
 
 [connection signal="bubbles_breathed_in" from="BubbleManager" to="SubViewport/Node3D/Player" method="_on_bubble_manager_bubbles_breathed_in"]
