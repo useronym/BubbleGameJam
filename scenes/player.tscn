@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://brpt71jl5cg2q"]
+[gd_scene load_steps=10 format=3 uid="uid://brpt71jl5cg2q"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_yofdb"]
+[ext_resource type="AudioStream" uid="uid://b7ggktlgopsnw" path="res://environment/audio/walking_loop.wav" id="2_0kegd"]
 [ext_resource type="PackedScene" uid="uid://c6wmqp0buuk5m" path="res://scenes/PlayerGUI.tscn" id="2_ywley"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_jse87"]
@@ -80,6 +81,10 @@ _data = {
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 3
 script = ExtResource("1_yofdb")
+
+[node name="WalkingAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_0kegd")
+bus = &"SFX"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.85, 0, 0, 0, 0.85, 0, 0, 0, 0.85, 0, 0.85, 0)
