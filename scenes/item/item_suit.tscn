@@ -7,3 +7,5 @@
 
 [node name="collectable_suit" parent="Area3D/CollisionShape3D" index="0" instance=ExtResource("2_wikrj")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, -0.478955, 0)
+
+[connection signal="OnInteract" from="Area3D" to="Area3D" method="_on_on_interact"]

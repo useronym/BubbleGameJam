@@ -13,6 +13,5 @@ func _process(delta):
 func _on_on_interact() -> void:
 	$PickupSound.play()
 	## TODO: increase some global counter
-	$CollisionShape3D.visible = false
-	$CollisionShape3D.disabled = true
+	$CollisionShape3D.free()
 	pass
