@@ -1,8 +1,9 @@
-[gd_resource type="AudioBusLayout" load_steps=2 format=3 uid="uid://cjlphqjpddcyd"]
+[gd_resource type="AudioBusLayout" load_steps=2 format=3 uid="uid://r5bnnguqi3jo"]
 
 [sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_5cosa"]
 resource_name = "LowPassFilter"
 cutoff_hz = 1000.0
+db = 1
 
 [resource]
 bus/1/name = &"SFX"

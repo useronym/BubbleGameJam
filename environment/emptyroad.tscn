@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvvyaffq6qj2p"]
+
+[ext_resource type="PackedScene" uid="uid://grg6vbesl6ey" path="res://environment/emptyroad.fbx" id="1_l4643"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_soliv"]
+data = PackedVector3Array(0.025, 0.025, 0, 0.025, -0.025, 0, -0.025, -0.025, 0, -0.025, 0.025, 0, 0.025, 0.025, 0, -0.025, -0.025, 0)
+
+[node name="emptyroad" instance=ExtResource("1_l4643")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="emptyroad" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="emptyroad/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, -1.42109e-14, 0, 1.42109e-14, 1, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_soliv")
