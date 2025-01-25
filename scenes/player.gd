@@ -20,7 +20,7 @@ var currentState : CharacterState = CharacterState.WALKING
 
 @onready var airDepletionTimer = $AirDepletionTimer
 # Options
-@export var DEFAULT_SPEED := 2
+@export var DEFAULT_SPEED := 1
 @export var mouse_sensitivity := 0.1
 
 var CURRENT_AIR_CAPACITY := 100
