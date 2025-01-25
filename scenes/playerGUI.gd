@@ -3,6 +3,7 @@ extends CanvasLayer
 @onready var label = $TextureRect/Label
 @onready var air_capacity_bar = $AirProgressBar
 @onready var debuginfo = $DebugInfoLabel
+@onready var death_screen = $DeathScreen
 const DEBUG_TEMPLATE = "PlayerState: {plrstate}\nPlayerSpeed: {speed}\nGlobal Coordinates (X/Y/Z): {globalpos}\nFPS: {fps}"
 
 ## Updates the hover text thing. Used internally for process_interact() in player.gd
@@ -33,3 +34,7 @@ func debugLoop():
 
 func _on_player_air_capacity_updated(new_value: int):
 	update_air_capacity_bar(new_value)
+
+
+func _on_player_character_died() -> void:
+	death_screen.visible = true

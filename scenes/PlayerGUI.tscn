@@ -147,6 +147,31 @@ layout_mode = 1
 visible = false
 layout_mode = 1
 
+[node name="DeathScreen" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="DeathScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="DeathScreen/CenterContainer"]
+layout_mode = 2
+text = "You drowned.
+
+Hint: Look for air."
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="Closing" from="PauseNode/Settings" to="PauseNode" method="_on_close_button"]
 [connection signal="pressed" from="PauseNode/Main/VBoxContainer/Button" to="PauseNode" method="_unpause"]
 [connection signal="pressed" from="PauseNode/Main/VBoxContainer/Button2" to="PauseNode" method="_settings"]
