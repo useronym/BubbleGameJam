@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3ag2ldapngtl"]
+
+[ext_resource type="PackedScene" uid="uid://ddho18cgs4r0h" path="res://environment/light.fbx" id="1_fdsl8"]
+
+[node name="light" instance=ExtResource("1_fdsl8")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="light" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, -1.11022e-14, 0, 1.11022e-14, 1, 0, 0.0015481, 1.84547e-10)
+omni_range = 3.0
