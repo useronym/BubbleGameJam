@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://piq1qo6dhgdh"]
+[gd_scene load_steps=21 format=3 uid="uid://piq1qo6dhgdh"]
 
 [ext_resource type="PackedScene" uid="uid://brpt71jl5cg2q" path="res://scenes/player.tscn" id="1_8teri"]
 [ext_resource type="Shader" path="res://shaders/ps1.gdshader" id="1_k7buc"]
@@ -13,7 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://mtsnhob3ue78" path="res://scenes/level.tscn" id="9_ndpwn"]
 [ext_resource type="PackedScene" uid="uid://df7xv0nfo6bja" path="res://scenes/bubbles/bubble_manager.tscn" id="10_alvmu"]
 [ext_resource type="PackedScene" uid="uid://b2clvwp6pfoxk" path="res://scenes/item/items_manager.tscn" id="13_2j1is"]
-[ext_resource type="PackedScene" uid="uid://bk2mg2c1lcykf" path="res://scenes/item/item.tscn" id="13_o202s"]
+[ext_resource type="PackedScene" uid="uid://8ctxyxkkmgeo" path="res://scenes/item/item_suit.tscn" id="15_3d437"]
+[ext_resource type="PackedScene" uid="uid://nw1hiirwbbl5" path="res://scenes/item/item_helmet.tscn" id="15_pxotq"]
+[ext_resource type="PackedScene" uid="uid://c0k22utsto20l" path="res://scenes/item/item_tank.tscn" id="16_yh77s"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xegm8"]
 shader = ExtResource("1_k7buc")
@@ -99,17 +101,32 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, 6)
 [node name="BubbleAreaOnGround" parent="BubbleManager" instance=ExtResource("5_teoff")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0.69827, -25.5849)
 
+[node name="BubbleAreaOnGround15" parent="BubbleManager" instance=ExtResource("5_teoff")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3511, 0.698268, -40.5322)
+
+[node name="BubbleAreaOnGround16" parent="BubbleManager" instance=ExtResource("5_teoff")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4804, 0.698268, -49.4398)
+
+[node name="BubbleAreaOnGround17" parent="BubbleManager" instance=ExtResource("5_teoff")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.18876, 0.698268, -50.3162)
+
+[node name="BubbleAreaOnGround18" parent="BubbleManager" instance=ExtResource("5_teoff")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.33516, 0.698268, -50.0118)
+
+[node name="BubbleAreaOnGround19" parent="BubbleManager" instance=ExtResource("5_teoff")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.479687, 0.698268, -29.5389)
+
 [node name="BubbleAreaOnGround8" parent="BubbleManager" instance=ExtResource("5_teoff")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0.69827, -29.5849)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2488, 0.69827, -29.5849)
 
 [node name="BubbleAreaOnGround14" parent="BubbleManager" instance=ExtResource("5_teoff")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.69827, -30.5849)
 
 [node name="BubbleAreaOnGround9" parent="BubbleManager" instance=ExtResource("5_teoff")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.69827, -20.5849)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.29906, 0.69827, -14.6897)
 
 [node name="BubbleAreaOnGround10" parent="BubbleManager" instance=ExtResource("5_teoff")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.69827, -40.5849)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.44819, 0.69827, -39.0643)
 
 [node name="BubbleAreaOnGround11" parent="BubbleManager" instance=ExtResource("5_teoff")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.69827, -40.5849)
@@ -118,13 +135,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.69827, -40.5849)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0.69827, -25.5849)
 
 [node name="BubbleAreaOnGround13" parent="BubbleManager" instance=ExtResource("5_teoff")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.69827, -0.5849)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.43889, 0.69827, -0.5849)
 
 [node name="BubbleAreaOnGround2" parent="BubbleManager" instance=ExtResource("5_teoff")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.738281, 0.69827, -7.84915)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.738281, 0.69827, -10.355)
 
 [node name="BubbleAreaOnGround7" parent="BubbleManager" instance=ExtResource("5_teoff")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.69827, 6.15085)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.85021, 0.69827, 6.15085)
 
 [node name="BubbleAreaOnGround3" parent="BubbleManager" instance=ExtResource("5_teoff")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27361, 0.69827, -24.8491)
@@ -133,14 +150,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27361, 0.69827, -24.8491)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.83134, 0.69827, -15.2542)
 
 [node name="BubbleAreaOnGround5" parent="BubbleManager" instance=ExtResource("5_teoff")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8313, 0.69827, -35.2542)
-
-[node name="BubbleAreaOnGround6" parent="BubbleManager" instance=ExtResource("5_teoff")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.83134, 0.69827, -45.2542)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8313, 0.69827, -29.9746)
 
 [node name="ItemsManager" parent="." instance=ExtResource("13_2j1is")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.78072)
 
-[node name="ItemHelmet" parent="ItemsManager" instance=ExtResource("13_o202s")]
+[node name="ItemSuit" parent="ItemsManager" instance=ExtResource("15_3d437")]
+transform = Transform3D(-0.922215, 0, 0.386679, 0, 1, 0, -0.386679, 0, -0.922215, -15.784, -1.90735e-06, -23.5955)
+
+[node name="ItemHelmet" parent="ItemsManager" instance=ExtResource("15_pxotq")]
+transform = Transform3D(0.82268, 0.511264, -0.248609, -1.23356e-08, 0.437304, 0.899314, 0.568504, -0.739848, 0.359761, -5.59826, 0, -44.568)
+
+[node name="ItemTank" parent="ItemsManager" instance=ExtResource("16_yh77s")]
+transform = Transform3D(-0.149777, 0.496719, -0.85489, 0, 0.864643, 0.502386, 0.98872, 0.0752459, -0.129504, 15.8021, 0, -25.6778)
 
 [connection signal="bubbles_breathed_in" from="BubbleManager" to="SubViewport/Node3D/Player" method="_on_bubble_manager_bubbles_breathed_in"]
