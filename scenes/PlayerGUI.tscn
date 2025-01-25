@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6wmqp0buuk5m"]
+[gd_scene load_steps=6 format=3 uid="uid://c6wmqp0buuk5m"]
 
 [ext_resource type="Texture2D" uid="uid://bulteu43r2r6a" path="res://gfx/crosshair.png" id="1_blv8c"]
 [ext_resource type="Script" path="res://scenes/playerGUI.gd" id="1_r6s6h"]
 [ext_resource type="Script" path="res://scenes/pause_node.gd" id="3_81wm1"]
 [ext_resource type="PackedScene" uid="uid://bs035oor8cgug" path="res://scenes/SettingsWindow.tscn" id="4_48uxn"]
+[ext_resource type="PackedScene" uid="uid://2fr2e1iusn1b" path="res://scenes/notes/note.tscn" id="5_r5rl5"]
 
 [node name="PlayerGUI" type="CanvasLayer"]
 script = ExtResource("1_r6s6h")
@@ -122,6 +123,20 @@ step = 1.0
 value = 60.0
 rounded = true
 show_percentage = false
+
+[node name="NotesManager" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="1" parent="NotesManager" instance=ExtResource("5_r5rl5")]
+visible = false
+layout_mode = 1
+
+[node name="2" parent="NotesManager" instance=ExtResource("5_r5rl5")]
+visible = false
+layout_mode = 1
 
 [connection signal="Closing" from="PauseNode/Settings" to="PauseNode" method="_on_close_button"]
 [connection signal="pressed" from="PauseNode/Main/VBoxContainer/Button" to="PauseNode" method="_unpause"]
