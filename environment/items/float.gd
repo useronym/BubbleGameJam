@@ -1,6 +1,6 @@
 extends MeshInstance3D
 
-@onready var start_pos = position
+@onready var start_pos = global_position
 var speed = 0.1
 var range = 0.25
 var time = 0
@@ -13,4 +13,4 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	time += speed*delta
-	position = start_pos + Vector3(0, range * sin(time), 0)
+	global_position = start_pos + Vector3(0, range * sin(time), 0)

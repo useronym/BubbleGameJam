@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://piq1qo6dhgdh"]
+[gd_scene load_steps=22 format=3 uid="uid://piq1qo6dhgdh"]
 
 [ext_resource type="PackedScene" uid="uid://brpt71jl5cg2q" path="res://scenes/player.tscn" id="1_8teri"]
 [ext_resource type="Shader" path="res://shaders/ps1.gdshader" id="1_k7buc"]
@@ -16,6 +16,9 @@
 [ext_resource type="PackedScene" uid="uid://8ctxyxkkmgeo" path="res://scenes/item/item_suit.tscn" id="15_3d437"]
 [ext_resource type="PackedScene" uid="uid://nw1hiirwbbl5" path="res://scenes/item/item_helmet.tscn" id="15_pxotq"]
 [ext_resource type="PackedScene" uid="uid://c0k22utsto20l" path="res://scenes/item/item_tank.tscn" id="16_yh77s"]
+[ext_resource type="PackedScene" uid="uid://bk2mg2c1lcykf" path="res://scenes/item/item.tscn" id="13_o202s"]
+[ext_resource type="AudioStream" uid="uid://6hooqjm4cwgd" path="res://environment/audio/bubble_env.wav" id="15_0f3oo"]
+[ext_resource type="AudioStream" uid="uid://bm5n0nfltcnio" path="res://environment/audio/drum_env.wav" id="16_kvdhs"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xegm8"]
 shader = ExtResource("1_k7buc")
@@ -51,6 +54,20 @@ fog_depth_end = 7.8
 volumetric_fog_density = 0.6537
 volumetric_fog_emission = Color(0.0976419, 0.254903, 0.226907, 1)
 volumetric_fog_emission_energy = 0.0
+
+[sub_resource type="GDScript" id="GDScript_u8s5s"]
+script/source = "extends AudioStreamPlayer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
 
 [node name="SubViewportContainer" type="SubViewportContainer"]
 material = SubResource("ShaderMaterial_xegm8")
@@ -163,5 +180,18 @@ transform = Transform3D(0.82268, 0.511264, -0.248609, -1.23356e-08, 0.437304, 0.
 
 [node name="ItemTank" parent="ItemsManager" instance=ExtResource("16_yh77s")]
 transform = Transform3D(-0.149777, 0.496719, -0.85489, 0, 0.864643, 0.502386, 0.98872, 0.0752459, -0.129504, 15.8021, 0, -25.6778)
+
+[node name="Audio" type="Node3D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("15_0f3oo")
+autoplay = true
+script = SubResource("GDScript_u8s5s")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Audio"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.54752)
+stream = ExtResource("16_kvdhs")
+volume_db = 3.0
+autoplay = true
 
 [connection signal="bubbles_breathed_in" from="BubbleManager" to="SubViewport/Node3D/Player" method="_on_bubble_manager_bubbles_breathed_in"]
