@@ -1,24 +1,18 @@
-[gd_scene load_steps=22 format=3 uid="uid://piq1qo6dhgdh"]
+[gd_scene load_steps=19 format=3 uid="uid://piq1qo6dhgdh"]
 
 [ext_resource type="PackedScene" uid="uid://brpt71jl5cg2q" path="res://scenes/player.tscn" id="1_8teri"]
 [ext_resource type="Shader" path="res://shaders/ps1.gdshader" id="1_k7buc"]
 [ext_resource type="Texture2D" uid="uid://bfveptx8iejlg" path="res://shaders/damien-ramirez-cg-2.jpg" id="2_l2tep"]
 [ext_resource type="PackedScene" uid="uid://b72hjo0h8mcm6" path="res://scenes/lights.tscn" id="3_r2uqw"]
-[ext_resource type="PackedScene" uid="uid://cn77ildhp66sp" path="res://environment/cornerroad.tscn" id="5_rk2qt"]
 [ext_resource type="PackedScene" uid="uid://dyy7qou5v3pbc" path="res://scenes/bubbles/bubble_area_on_ground.tscn" id="5_teoff"]
-[ext_resource type="PackedScene" uid="uid://dvvyaffq6qj2p" path="res://environment/emptyroad.tscn" id="5_uw7jg"]
-[ext_resource type="PackedScene" uid="uid://dgguda57ajbii" path="res://environment/endroad.tscn" id="6_1xvsr"]
-[ext_resource type="PackedScene" uid="uid://06y4ptj1rbp0" path="res://environment/crossroad.tscn" id="6_gbfun"]
-[ext_resource type="PackedScene" uid="uid://djru8fesjxq8n" path="res://environment/onewallroad.tscn" id="7_ssf3u"]
 [ext_resource type="PackedScene" uid="uid://mtsnhob3ue78" path="res://scenes/level.tscn" id="9_ndpwn"]
 [ext_resource type="PackedScene" uid="uid://df7xv0nfo6bja" path="res://scenes/bubbles/bubble_manager.tscn" id="10_alvmu"]
 [ext_resource type="PackedScene" uid="uid://b2clvwp6pfoxk" path="res://scenes/item/items_manager.tscn" id="13_2j1is"]
+[ext_resource type="AudioStream" uid="uid://6hooqjm4cwgd" path="res://environment/audio/bubble_env.wav" id="15_0f3oo"]
 [ext_resource type="PackedScene" uid="uid://8ctxyxkkmgeo" path="res://scenes/item/item_suit.tscn" id="15_3d437"]
 [ext_resource type="PackedScene" uid="uid://nw1hiirwbbl5" path="res://scenes/item/item_helmet.tscn" id="15_pxotq"]
-[ext_resource type="PackedScene" uid="uid://c0k22utsto20l" path="res://scenes/item/item_tank.tscn" id="16_yh77s"]
-[ext_resource type="PackedScene" uid="uid://bk2mg2c1lcykf" path="res://scenes/item/item.tscn" id="13_o202s"]
-[ext_resource type="AudioStream" uid="uid://6hooqjm4cwgd" path="res://environment/audio/bubble_env.wav" id="15_0f3oo"]
 [ext_resource type="AudioStream" uid="uid://bm5n0nfltcnio" path="res://environment/audio/drum_env.wav" id="16_kvdhs"]
+[ext_resource type="PackedScene" uid="uid://c0k22utsto20l" path="res://scenes/item/item_tank.tscn" id="16_yh77s"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xegm8"]
 shader = ExtResource("1_k7buc")
@@ -95,21 +89,6 @@ environment = SubResource("Environment_qbkgc")
 [node name="lights" parent="SubViewport/Node3D" instance=ExtResource("3_r2uqw")]
 
 [node name="AllModules" type="Node3D" parent="SubViewport/Node3D"]
-
-[node name="cornerroad" parent="SubViewport/Node3D/AllModules" instance=ExtResource("5_rk2qt")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -13, 0, 1)
-
-[node name="crossroad" parent="SubViewport/Node3D/AllModules" instance=ExtResource("6_gbfun")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 0, 6)
-
-[node name="emptyroad" parent="SubViewport/Node3D/AllModules" instance=ExtResource("5_uw7jg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 6)
-
-[node name="endroad" parent="SubViewport/Node3D/AllModules" instance=ExtResource("6_1xvsr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 1)
-
-[node name="onewallroad" parent="SubViewport/Node3D/AllModules" instance=ExtResource("7_ssf3u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, 6)
 
 [node name="level" parent="SubViewport/Node3D" instance=ExtResource("9_ndpwn")]
 
