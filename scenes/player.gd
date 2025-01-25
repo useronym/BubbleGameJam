@@ -27,7 +27,8 @@ var CURRENT_AIR_CAPACITY := 100
 
 const MAX_AIR_CAPACITY := 100
 const MIN_AIR_CAPACITY := 0
-const INCREMENT_AIR_CAPACITY_VALUE = 10
+const DECREMENT_AIR_CAPACITY_VALUE_SECOND = 2.5
+const INCREMENT_AIR_CAPACITY_VALUE = 50
 
 
 var inputEnabled := true # can the player move?
@@ -123,7 +124,7 @@ func increase_air_capacity():
 
 
 func decrease_air_capacity():
-	var new_air_capacity = self.CURRENT_AIR_CAPACITY - self.INCREMENT_AIR_CAPACITY_VALUE
+	var new_air_capacity = self.CURRENT_AIR_CAPACITY - self.DECREMENT_AIR_CAPACITY_VALUE_SECOND
 	if new_air_capacity < self.MIN_AIR_CAPACITY:
 		# DEATH
 		character_died.emit()
@@ -132,7 +133,7 @@ func decrease_air_capacity():
 
 func update_air_capacity(newValue: int) -> void:
 	self.CURRENT_AIR_CAPACITY = newValue
-	air_capacity_updated.emit(CURRENT_AIR_CAPACITY)
+	air_capacity_updated.emit(newValue)
 
 func _on_air_depletion_timer_timeout():
 	decrease_air_capacity()
