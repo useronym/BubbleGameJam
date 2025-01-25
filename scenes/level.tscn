@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://mtsnhob3ue78"]
+[gd_scene load_steps=14 format=3 uid="uid://mtsnhob3ue78"]
 
 [ext_resource type="PackedScene" uid="uid://c0vn3wljxi7nr" path="res://environment/room.tscn" id="1_1u23y"]
 [ext_resource type="PackedScene" uid="uid://cn77ildhp66sp" path="res://environment/cornerroad.tscn" id="2_unixm"]
@@ -9,13 +9,14 @@
 [ext_resource type="PackedScene" uid="uid://d0l8yp4r6apo3" path="res://environment/streightroad.tscn" id="7_88rua"]
 [ext_resource type="PackedScene" uid="uid://d0jvq1crggrcs" path="res://environment/troad.tscn" id="8_wigl6"]
 [ext_resource type="PackedScene" uid="uid://m56m8xnjatn8" path="res://environment/items/rack.tscn" id="9_a2k7y"]
+[ext_resource type="PackedScene" uid="uid://dikryi8cskl07" path="res://environment/items/pillow.tscn" id="10_6bcej"]
+[ext_resource type="PackedScene" uid="uid://crwt3qwq323mk" path="res://environment/items/cans_outside.tscn" id="11_c4urb"]
+[ext_resource type="PackedScene" uid="uid://8glmawo2wqdp" path="res://environment/items/cans.tscn" id="12_4qbtl"]
+[ext_resource type="PackedScene" uid="uid://cymj6e86kyvns" path="res://environment/items/bed.tscn" id="13_e726i"]
 
 [node name="level" type="Node3D"]
 
 [node name="room" parent="." instance=ExtResource("1_1u23y")]
-
-[node name="SubViewport_Node3D_AllModules#cornerroad2" parent="." instance=ExtResource("2_unixm")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -24, 0, -19)
 
 [node name="SubViewport_Node3D_AllModules#cornerroad4" parent="." instance=ExtResource("2_unixm")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -10, 0, -45)
@@ -26,9 +27,6 @@ transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 0, 0, -4
 [node name="SubViewport_Node3D_AllModules#cornerroad5" parent="." instance=ExtResource("2_unixm")]
 transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 15, 0, -35)
 
-[node name="SubViewport_Node3D_AllModules#crossroad3" parent="." instance=ExtResource("3_l7jf2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, -13)
-
 [node name="SubViewport_Node3D_AllModules#crossroad4" parent="." instance=ExtResource("3_l7jf2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -40)
 
@@ -38,32 +36,149 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -45)
 [node name="SubViewport_Node3D_AllModules#crossroad6" parent="." instance=ExtResource("3_l7jf2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -40)
 
-[node name="SubViewport_Node3D_AllModules#emptyroad3" parent="." instance=ExtResource("4_82bw6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 0, -12)
-
-[node name="SubViewport_Node3D_AllModules#endroad" parent="." instance=ExtResource("5_4ch8v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -13)
-
 [node name="SubViewport_Node3D_AllModules#endroad2" parent="." instance=ExtResource("5_4ch8v")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -15, 0, -40)
 
 [node name="SubViewport_Node3D_AllModules#endroad4" parent="." instance=ExtResource("5_4ch8v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -49)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -50)
 
 [node name="SubViewport_Node3D_AllModules#endroad3" parent="." instance=ExtResource("5_4ch8v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -50)
 
 [node name="SubViewport_Node3D_AllModules#onewallroad13" parent="." instance=ExtResource("6_366rb")]
-transform = Transform3D(-1, 0, -8.74226e-08, 0, 1, 0, 8.74226e-08, 0, -1, -39, 0, -18)
+transform = Transform3D(-1, 0, -8.74226e-08, 0, 1, 0, 8.74226e-08, 0, -1, -20, 0, -30)
 
-[node name="SubViewport_Node3D_AllModules#streightroad4" parent="." instance=ExtResource("7_88rua")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -19)
+[node name="SubViewport_Node3D_AllModules#onewallroad14" parent="." instance=ExtResource("6_366rb")]
+transform = Transform3D(-1, 0, -8.74226e-08, 0, 1, 0, 8.74226e-08, 0, -1, -20, 0, -25)
+
+[node name="SubViewport_Node3D_AllModules#onewallroad19" parent="." instance=ExtResource("6_366rb")]
+transform = Transform3D(-1, 0, -8.74226e-08, 0, 1, 0, 8.74226e-08, 0, -1, -20, 0, -40)
+
+[node name="SubViewport_Node3D_AllModules#onewallroad20" parent="." instance=ExtResource("6_366rb")]
+transform = Transform3D(-1, 0, -8.74226e-08, 0, 1, 0, 8.74226e-08, 0, -1, -20, 0, -35)
+
+[node name="SubViewport_Node3D_AllModules#onewallroad21" parent="." instance=ExtResource("6_366rb")]
+transform = Transform3D(-1, 0, -8.74226e-08, 0, 1, 0, 8.74226e-08, 0, -1, -20, 0, -50)
+
+[node name="SubViewport_Node3D_AllModules#onewallroad22" parent="." instance=ExtResource("6_366rb")]
+transform = Transform3D(-1, 0, -8.74226e-08, 0, 1, 0, 8.74226e-08, 0, -1, -20, 0, -45)
+
+[node name="SubViewport_Node3D_AllModules#onewallroad15" parent="." instance=ExtResource("6_366rb")]
+transform = Transform3D(-1, 0, -8.74226e-08, 0, 1, 0, 8.74226e-08, 0, -1, -20, 0, -20)
+
+[node name="SubViewport_Node3D_AllModules#onewallroad16" parent="." instance=ExtResource("6_366rb")]
+transform = Transform3D(-1, 0, -8.74226e-08, 0, 1, 0, 8.74226e-08, 0, -1, -20, 0, -15)
+
+[node name="SubViewport_Node3D_AllModules#onewallroad17" parent="." instance=ExtResource("6_366rb")]
+transform = Transform3D(-1, 0, -8.74226e-08, 0, 1, 0, 8.74226e-08, 0, -1, -20, 0, -10)
+
+[node name="SubViewport_Node3D_AllModules#onewallroad18" parent="." instance=ExtResource("6_366rb")]
+transform = Transform3D(-1, 0, -8.74226e-08, 0, 1, 0, 8.74226e-08, 0, -1, -20, 0, -5)
+
+[node name="SubViewport_Node3D_AllModules#onewallroad23" parent="." instance=ExtResource("6_366rb")]
+transform = Transform3D(-1, 0, -8.74226e-08, 0, 1, 0, 8.74226e-08, 0, -1, -20, 0, 0)
+
+[node name="SubViewport_Node3D_AllModules#onewallroad24" parent="." instance=ExtResource("6_366rb")]
+transform = Transform3D(-1, 0, -8.74226e-08, 0, 1, 0, 8.74226e-08, 0, -1, -20, 0, 5)
+
+[node name="SubViewport_Node3D_AllModules#onewallroad25" parent="." instance=ExtResource("6_366rb")]
+transform = Transform3D(-1, 0, -8.74226e-08, 0, 1, 0, 8.74226e-08, 0, -1, -20, 0, 10)
+
+[node name="SubViewport_Node3D_AllModules#onewallroad27" parent="." instance=ExtResource("6_366rb")]
+transform = Transform3D(1, 0, 1.74845e-07, 0, 1, 0, -1.74845e-07, 0, 1, 20, 0, -5)
+
+[node name="SubViewport_Node3D_AllModules#onewallroad28" parent="." instance=ExtResource("6_366rb")]
+transform = Transform3D(1, 0, 1.74845e-07, 0, 1, 0, -1.74845e-07, 0, 1, 20, 0, -10)
+
+[node name="SubViewport_Node3D_AllModules#onewallroad29" parent="." instance=ExtResource("6_366rb")]
+transform = Transform3D(1, 0, 1.74845e-07, 0, 1, 0, -1.74845e-07, 0, 1, 20, 0, 5)
+
+[node name="SubViewport_Node3D_AllModules#onewallroad30" parent="." instance=ExtResource("6_366rb")]
+transform = Transform3D(1, 0, 1.74845e-07, 0, 1, 0, -1.74845e-07, 0, 1, 20, 0, 0)
+
+[node name="SubViewport_Node3D_AllModules#onewallroad32" parent="." instance=ExtResource("6_366rb")]
+transform = Transform3D(1, 0, 1.74845e-07, 0, 1, 0, -1.74845e-07, 0, 1, 20, 0, 10)
+
+[node name="SubViewport_Node3D_AllModules#onewallroad33" parent="." instance=ExtResource("6_366rb")]
+transform = Transform3D(1, 0, 1.74845e-07, 0, 1, 0, -1.74845e-07, 0, 1, 20, 0, -15)
+
+[node name="SubViewport_Node3D_AllModules#onewallroad34" parent="." instance=ExtResource("6_366rb")]
+transform = Transform3D(1, 0, 1.74845e-07, 0, 1, 0, -1.74845e-07, 0, 1, 20, 0, -20)
+
+[node name="SubViewport_Node3D_AllModules#onewallroad35" parent="." instance=ExtResource("6_366rb")]
+transform = Transform3D(1, 0, 1.74845e-07, 0, 1, 0, -1.74845e-07, 0, 1, 20, 0, -25)
+
+[node name="SubViewport_Node3D_AllModules#onewallroad36" parent="." instance=ExtResource("6_366rb")]
+transform = Transform3D(1, 0, 1.74845e-07, 0, 1, 0, -1.74845e-07, 0, 1, 20, 0, -30)
+
+[node name="SubViewport_Node3D_AllModules#onewallroad37" parent="." instance=ExtResource("6_366rb")]
+transform = Transform3D(1, 0, 1.74845e-07, 0, 1, 0, -1.74845e-07, 0, 1, 20, 0, -35)
+
+[node name="SubViewport_Node3D_AllModules#onewallroad38" parent="." instance=ExtResource("6_366rb")]
+transform = Transform3D(1, 0, 1.74845e-07, 0, 1, 0, -1.74845e-07, 0, 1, 20, 0, -40)
+
+[node name="SubViewport_Node3D_AllModules#onewallroad39" parent="." instance=ExtResource("6_366rb")]
+transform = Transform3D(1, 0, 1.74845e-07, 0, 1, 0, -1.74845e-07, 0, 1, 20, 0, -45)
+
+[node name="SubViewport_Node3D_AllModules#onewallroad40" parent="." instance=ExtResource("6_366rb")]
+transform = Transform3D(1, 0, 1.74845e-07, 0, 1, 0, -1.74845e-07, 0, 1, 20, 0, -50)
+
+[node name="SubViewport_Node3D_AllModules#onewallroad41" parent="." instance=ExtResource("6_366rb")]
+transform = Transform3D(-2.18557e-07, 0, 1, 0, 1, 0, -1, 0, -2.18557e-07, 15, 0, -55)
+
+[node name="SubViewport_Node3D_AllModules#onewallroad49" parent="." instance=ExtResource("6_366rb")]
+transform = Transform3D(-2.18557e-07, 0, 1, 0, 1, 0, -1, 0, -2.18557e-07, 20, 0, -55)
+
+[node name="SubViewport_Node3D_AllModules#onewallroad42" parent="." instance=ExtResource("6_366rb")]
+transform = Transform3D(-2.18557e-07, 0, 1, 0, 1, 0, -1, 0, -2.18557e-07, 10, 0, -55)
+
+[node name="SubViewport_Node3D_AllModules#onewallroad43" parent="." instance=ExtResource("6_366rb")]
+transform = Transform3D(-2.18557e-07, 0, 1, 0, 1, 0, -1, 0, -2.18557e-07, 5, 0, -55)
+
+[node name="SubViewport_Node3D_AllModules#onewallroad44" parent="." instance=ExtResource("6_366rb")]
+transform = Transform3D(-2.18557e-07, 0, 1, 0, 1, 0, -1, 0, -2.18557e-07, -1.90735e-06, 0, -55)
+
+[node name="SubViewport_Node3D_AllModules#onewallroad45" parent="." instance=ExtResource("6_366rb")]
+transform = Transform3D(-2.18557e-07, 0, 1, 0, 1, 0, -1, 0, -2.18557e-07, -5, 0, -55)
+
+[node name="SubViewport_Node3D_AllModules#onewallroad46" parent="." instance=ExtResource("6_366rb")]
+transform = Transform3D(-2.18557e-07, 0, 1, 0, 1, 0, -1, 0, -2.18557e-07, -10, 0, -55)
+
+[node name="SubViewport_Node3D_AllModules#onewallroad47" parent="." instance=ExtResource("6_366rb")]
+transform = Transform3D(-2.18557e-07, 0, 1, 0, 1, 0, -1, 0, -2.18557e-07, -15, 0, -55)
+
+[node name="SubViewport_Node3D_AllModules#onewallroad48" parent="." instance=ExtResource("6_366rb")]
+transform = Transform3D(-2.18557e-07, 0, 1, 0, 1, 0, -1, 0, -2.18557e-07, -20, 0, -55)
+
+[node name="SubViewport_Node3D_AllModules#onewallroad50" parent="." instance=ExtResource("6_366rb")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -15, 0, 15)
+
+[node name="SubViewport_Node3D_AllModules#onewallroad51" parent="." instance=ExtResource("6_366rb")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -20, 0, 15)
+
+[node name="SubViewport_Node3D_AllModules#onewallroad52" parent="." instance=ExtResource("6_366rb")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -10, 0, 15)
+
+[node name="SubViewport_Node3D_AllModules#onewallroad53" parent="." instance=ExtResource("6_366rb")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -5, 0, 15)
+
+[node name="SubViewport_Node3D_AllModules#onewallroad54" parent="." instance=ExtResource("6_366rb")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -6.35783e-07, 0, 15)
+
+[node name="SubViewport_Node3D_AllModules#onewallroad55" parent="." instance=ExtResource("6_366rb")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 5, 0, 15)
+
+[node name="SubViewport_Node3D_AllModules#onewallroad56" parent="." instance=ExtResource("6_366rb")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 10, 0, 15)
+
+[node name="SubViewport_Node3D_AllModules#onewallroad57" parent="." instance=ExtResource("6_366rb")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 15, 0, 15)
+
+[node name="SubViewport_Node3D_AllModules#onewallroad58" parent="." instance=ExtResource("6_366rb")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 20, 0, 15)
 
 [node name="SubViewport_Node3D_AllModules#streightroad5" parent="." instance=ExtResource("7_88rua")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -20)
-
-[node name="SubViewport_Node3D_AllModules#troad" parent="." instance=ExtResource("8_wigl6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -13)
 
 [node name="SubViewport_Node3D_level#cornerroad6" parent="." instance=ExtResource("2_unixm")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -30)
@@ -91,6 +206,117 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -35)
 
 [node name="SubViewport_Node3D_level#emptyroad" parent="." instance=ExtResource("4_82bw6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+
+[node name="SubViewport_Node3D_level#emptyroad3" parent="." instance=ExtResource("4_82bw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -5)
+
+[node name="SubViewport_Node3D_level#emptyroad4" parent="." instance=ExtResource("4_82bw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -10)
+
+[node name="SubViewport_Node3D_level#emptyroad5" parent="." instance=ExtResource("4_82bw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -15)
+
+[node name="SubViewport_Node3D_level#emptyroad6" parent="." instance=ExtResource("4_82bw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -20)
+
+[node name="SubViewport_Node3D_level#emptyroad8" parent="." instance=ExtResource("4_82bw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -20)
+
+[node name="SubViewport_Node3D_level#emptyroad9" parent="." instance=ExtResource("4_82bw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -25)
+
+[node name="SubViewport_Node3D_level#emptyroad10" parent="." instance=ExtResource("4_82bw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -15)
+
+[node name="SubViewport_Node3D_level#emptyroad11" parent="." instance=ExtResource("4_82bw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -10)
+
+[node name="SubViewport_Node3D_level#emptyroad12" parent="." instance=ExtResource("4_82bw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -5)
+
+[node name="SubViewport_Node3D_level#emptyroad13" parent="." instance=ExtResource("4_82bw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
+
+[node name="SubViewport_Node3D_level#emptyroad14" parent="." instance=ExtResource("4_82bw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 0)
+
+[node name="SubViewport_Node3D_level#emptyroad15" parent="." instance=ExtResource("4_82bw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 5)
+
+[node name="SubViewport_Node3D_level#emptyroad16" parent="." instance=ExtResource("4_82bw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 5)
+
+[node name="SubViewport_Node3D_level#emptyroad17" parent="." instance=ExtResource("4_82bw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 10)
+
+[node name="SubViewport_Node3D_level#emptyroad18" parent="." instance=ExtResource("4_82bw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 10)
+
+[node name="SubViewport_Node3D_level#emptyroad19" parent="." instance=ExtResource("4_82bw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -5)
+
+[node name="SubViewport_Node3D_level#emptyroad20" parent="." instance=ExtResource("4_82bw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -5)
+
+[node name="SubViewport_Node3D_level#emptyroad27" parent="." instance=ExtResource("4_82bw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -10)
+
+[node name="SubViewport_Node3D_level#emptyroad29" parent="." instance=ExtResource("4_82bw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -15)
+
+[node name="SubViewport_Node3D_level#emptyroad28" parent="." instance=ExtResource("4_82bw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -10)
+
+[node name="SubViewport_Node3D_level#emptyroad30" parent="." instance=ExtResource("4_82bw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -20)
+
+[node name="SubViewport_Node3D_level#emptyroad31" parent="." instance=ExtResource("4_82bw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -20)
+
+[node name="SubViewport_Node3D_level#emptyroad32" parent="." instance=ExtResource("4_82bw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -50)
+
+[node name="SubViewport_Node3D_level#emptyroad33" parent="." instance=ExtResource("4_82bw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -50)
+
+[node name="SubViewport_Node3D_level#emptyroad34" parent="." instance=ExtResource("4_82bw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -45)
+
+[node name="SubViewport_Node3D_level#emptyroad36" parent="." instance=ExtResource("4_82bw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -40)
+
+[node name="SubViewport_Node3D_level#emptyroad35" parent="." instance=ExtResource("4_82bw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -45)
+
+[node name="SubViewport_Node3D_level#emptyroad37" parent="." instance=ExtResource("4_82bw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -50)
+
+[node name="SubViewport_Node3D_level#emptyroad38" parent="." instance=ExtResource("4_82bw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -50)
+
+[node name="SubViewport_Node3D_level#emptyroad39" parent="." instance=ExtResource("4_82bw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -45)
+
+[node name="SubViewport_Node3D_level#emptyroad21" parent="." instance=ExtResource("4_82bw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 0)
+
+[node name="SubViewport_Node3D_level#emptyroad22" parent="." instance=ExtResource("4_82bw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+
+[node name="SubViewport_Node3D_level#emptyroad23" parent="." instance=ExtResource("4_82bw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 5)
+
+[node name="SubViewport_Node3D_level#emptyroad24" parent="." instance=ExtResource("4_82bw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 5)
+
+[node name="SubViewport_Node3D_level#emptyroad25" parent="." instance=ExtResource("4_82bw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 10)
+
+[node name="SubViewport_Node3D_level#emptyroad26" parent="." instance=ExtResource("4_82bw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 10)
+
+[node name="SubViewport_Node3D_level#emptyroad7" parent="." instance=ExtResource("4_82bw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -30)
 
 [node name="SubViewport_Node3D_level#emptyroad2" parent="." instance=ExtResource("4_82bw6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
@@ -207,3 +433,15 @@ transform = Transform3D(-2.42721e-08, -0.55528, -0.831664, 1, -4.37114e-08, 2.11
 
 [node name="rack4" parent="." instance=ExtResource("9_a2k7y")]
 transform = Transform3D(-4.27639e-08, -0.978325, 0.207075, 1, -4.37114e-08, 4.23517e-22, 9.05154e-09, 0.207075, 0.978325, -3.61341, 0.271771, 4.70882)
+
+[node name="pillow" parent="." instance=ExtResource("10_6bcej")]
+transform = Transform3D(0.975373, -0.220561, 0, 0.217548, 0.962047, -0.164738, 0.0363348, 0.160681, 0.986337, 2.02182, 0.744445, -0.907172)
+
+[node name="cansOutside" parent="." instance=ExtResource("11_c4urb")]
+transform = Transform3D(0.981266, 0, -0.192659, 0, 1, 0, 0.192659, 0, 0.981266, -0.907834, 0.316321, -3.4068)
+
+[node name="cans" parent="." instance=ExtResource("12_4qbtl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.298723, 0.803835, 2.18691)
+
+[node name="bed" parent="." instance=ExtResource("13_e726i")]
+transform = Transform3D(0.99857, -0.0534683, -0.000243566, 0.0534688, 0.998559, 0.00454878, 0, -0.00455529, 0.99999, 1.73145, 0.456457, -0.269653)
