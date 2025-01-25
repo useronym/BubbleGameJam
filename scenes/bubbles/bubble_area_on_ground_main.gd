@@ -27,6 +27,7 @@ func _on_bubble_breath_area_3d_body_entered(body):
 		
 	breathed_in.emit()
 	$AudioStreamPlayer3D.stop()
+	$ConsumeBubbleSound.play()
 	bubble_vfx.visible = false
 	active = false
 	respawn_timer.start(RESPAWN_TIME)
