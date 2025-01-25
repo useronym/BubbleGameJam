@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgy5777llql2w"]
+
+[ext_resource type="PackedScene" uid="uid://b3ag2ldapngtl" path="res://environment/light.tscn" id="1_s8nmf"]
+[ext_resource type="Script" path="res://environment/light_flicker.gd" id="2_s1rfo"]
+
+[node name="light" instance=ExtResource("1_s8nmf")]
+
+[node name="light" parent="." index="0"]
+script = ExtResource("2_s1rfo")

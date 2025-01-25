@@ -11,6 +11,8 @@ points = PackedVector3Array(0.00292661, -0.00152693, 0.0034272, 0.00253611, -0.0
 [node name="cans" parent="." index="0"]
 transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0.0940503, -0.200282, -0.0928475)
 script = ExtResource("2_w4sda")
+speed = 0.15
+range = 0.01
 
 [node name="StaticBody3D" type="StaticBody3D" parent="cans" index="0"]
 

@@ -1,5 +1,6 @@
 extends Interactible3D
 
+signal item_collected
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,6 +13,6 @@ func _process(delta):
 
 func _on_on_interact() -> void:
 	$PickupSound.play()
-	## TODO: increase some global counter
+	item_collected.emit()
 	$CollisionShape3D.free()
 	pass

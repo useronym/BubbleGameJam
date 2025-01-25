@@ -1,11 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://b72hjo0h8mcm6"]
+[gd_scene load_steps=3 format=3 uid="uid://b72hjo0h8mcm6"]
 
 [ext_resource type="PackedScene" uid="uid://b3ag2ldapngtl" path="res://environment/light.tscn" id="1_of4rr"]
+[ext_resource type="PackedScene" uid="uid://cgy5777llql2w" path="res://environment/light_flicker.tscn" id="2_hs14c"]
 
 [node name="lights" type="Node3D"]
-
-[node name="light3" parent="." instance=ExtResource("1_of4rr")]
-transform = Transform3D(-3.57423e-08, -0.575662, 0.817688, -2.5163e-08, 0.817688, 0.575662, -1, 0, -4.37114e-08, 2.30113, 1.9469, -0.342764)
 
 [node name="light4" parent="." instance=ExtResource("1_of4rr")]
 transform = Transform3D(0.965926, 0.148992, -0.211633, -2.5163e-08, 0.817688, 0.575662, 0.258819, -0.556047, 0.789826, -0.188282, 1.82791, 2.39073)
@@ -21,3 +19,6 @@ shadow_enabled = true
 shadow_blur = 0.0
 directional_shadow_mode = 1
 directional_shadow_max_distance = 10.6
+
+[node name="light2" parent="." instance=ExtResource("2_hs14c")]
+transform = Transform3D(-3.57423e-08, -0.575662, 0.817688, -2.5163e-08, 0.817688, 0.575662, -1, 0, -4.37114e-08, 2.30113, 1.9469, -0.342764)

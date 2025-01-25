@@ -1,15 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://m56m8xnjatn8"]
+[gd_scene load_steps=3 format=3 uid="uid://m56m8xnjatn8"]
 
 [ext_resource type="PackedScene" uid="uid://c8b7vy7ty0wom" path="res://environment/items/rack.fbx" id="1_dvs5m"]
-[ext_resource type="Script" path="res://environment/items/float.gd" id="2_opxbp"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_o85bc"]
 points = PackedVector3Array(0.00458235, 0.00211343, 0.00682251, -0.00454829, 0.00211343, 0.00682251, 0.00458235, -0.00210845, 0.00682251, 0.00458235, 0.00211343, -0.00705603, -0.00454829, -0.00210845, 0.00682251, -0.00454829, 0.00211343, -0.00705603, 0.00458235, -0.00210845, -0.00705603, -0.00454829, -0.00210845, -0.00705603)
 
 [node name="rack" instance=ExtResource("1_dvs5m")]
-
-[node name="rack" parent="." index="0"]
-script = ExtResource("2_opxbp")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="rack" index="0"]
 
