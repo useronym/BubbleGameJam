@@ -121,10 +121,10 @@ theme_override_font_sizes/font_size = 18
 text = "hi"
 
 [node name="AirProgressBar" type="ProgressBar" parent="."]
-offset_left = 1117.0
-offset_top = 170.0
-offset_right = 1137.0
-offset_bottom = 492.0
+offset_left = 1089.0
+offset_top = 165.0
+offset_right = 1109.0
+offset_bottom = 487.0
 theme_override_styles/background = SubResource("StyleBoxFlat_wga81")
 theme_override_styles/fill = SubResource("StyleBoxFlat_jwt2n")
 step = 1.0
