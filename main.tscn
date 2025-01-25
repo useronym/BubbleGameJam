@@ -16,11 +16,11 @@
 [ext_resource type="AudioStream" uid="uid://6hooqjm4cwgd" path="res://environment/audio/bubble_env.wav" id="15_0f3oo"]
 [ext_resource type="PackedScene" path="res://scenes/item/item_suit.tscn" id="15_3d437"]
 [ext_resource type="PackedScene" path="res://scenes/item/item_helmet.tscn" id="15_pxotq"]
-[ext_resource type="AudioStream" uid="uid://bm5n0nfltcnio" path="res://environment/audio/drum_env.wav" id="16_kvdhs"]
 [ext_resource type="PackedScene" path="res://scenes/item/item_tank.tscn" id="16_yh77s"]
 [ext_resource type="AudioStream" uid="uid://bw4q73n10c0ss" path="res://environment/audio/harmony_1.wav" id="19_xrs77"]
 [ext_resource type="AudioStream" uid="uid://d34auphr31u7" path="res://environment/audio/harmony_2.wav" id="20_2qe0c"]
 [ext_resource type="AudioStream" uid="uid://cd064vddnu426" path="res://environment/audio/harmony_3.wav" id="21_r51fk"]
+[ext_resource type="AudioStream" uid="uid://dyvpcdtn61qs0" path="res://environment/audio/rythm.wav" id="22_5dyo7"]
 [ext_resource type="AudioStream" uid="uid://3n2bdjdfy8yk" path="res://environment/audio/harmony_4.wav" id="22_q7mg7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xegm8"]
@@ -191,11 +191,6 @@ stream = ExtResource("15_0f3oo")
 autoplay = true
 script = SubResource("GDScript_u8s5s")
 
-[node name="Drum" type="AudioStreamPlayer3D" parent="Audio"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.54752)
-stream = ExtResource("16_kvdhs")
-autoplay = true
-
 [node name="Harmony 1" type="AudioStreamPlayer3D" parent="Audio"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.73963, 0, -53.1486)
 stream = ExtResource("19_xrs77")
@@ -223,5 +218,13 @@ stream = ExtResource("22_q7mg7")
 volume_db = -6.0
 unit_size = 2.5
 autoplay = true
+
+[node name="Rythm" type="AudioStreamPlayer3D" parent="Audio"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.31192)
+stream = ExtResource("22_5dyo7")
+volume_db = -12.0
+unit_size = 7.0
+autoplay = true
+panning_strength = 3.0
 
 [connection signal="bubbles_breathed_in" from="BubbleManager" to="SubViewport/Node3D/Player" method="_on_bubble_manager_bubbles_breathed_in"]
