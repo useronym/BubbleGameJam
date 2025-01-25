@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cymj6e86kyvns"]
+
+[ext_resource type="PackedScene" uid="uid://ca3bj6abeuggy" path="res://environment/items/bed.fbx" id="1_1rjum"]
+[ext_resource type="Script" path="res://environment/items/float.gd" id="2_1pjjp"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_wg5yo"]
+points = PackedVector3Array(-0.00596932, -0.00836675, -0.000385951, -0.00581974, -0.00829776, -0.00183049, -0.00522608, -0.00915818, -0.00179358, -0.00537566, -0.00922717, -0.000348682, -0.00435779, 0.00960462, 0.000603832, -0.00420821, 0.00967564, -0.000841065, 0.00596932, 0.00836472, 0.000385592, 0.00435662, -0.00960665, -0.000604191, 0.0036239, -0.0102966, -0.000726749, 0.00347431, -0.0103656, 0.00071779, 0.00420704, -0.00967767, 0.000840707, 0.00581857, 0.00829573, 0.00183049, 0.00522491, 0.00915615, 0.00179322, -0.00362507, 0.0102946, 0.00072639, -0.00347548, 0.0103636, -0.000718149, 0.00537449, 0.00922514, 0.000348323)
+
+[node name="bed" instance=ExtResource("1_1rjum")]
+
+[node name="bed" parent="." index="0"]
+transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0.271404, -0.0582228, 0.0212548)
+script = ExtResource("2_1pjjp")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="bed" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="bed/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_wg5yo")

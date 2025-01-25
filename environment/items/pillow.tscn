@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dikryi8cskl07"]
+
+[ext_resource type="PackedScene" uid="uid://564it2t4bnvk" path="res://environment/items/pillow.fbx" id="1_bq625"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_10qst"]
+points = PackedVector3Array(-0.00374379, 0.00331531, -0.00096707, -0.00352923, 0.00288394, -0.000175877, 0.000327082, 0.00178671, 0.000796411, 0.00493954, 0.000919496, 0.000833879, -0.000375183, -0.0019969, -0.000848735, -0.00471637, -0.000798992, -0.0017489, -0.00423055, 0.00125784, -0.00135798, -0.00400655, 0.00101571, -0.000362591, -0.000183313, -9.9363e-05, 0.000749889, 0.00426468, 0.000733438, 0.00144086, 0.00378737, -0.00113479, 0.00125383, 0.00445277, -0.00113734, 0.000442966, 0.00396601, -0.00319417, 5.174e-05, -0.00054626, -0.00190578, 9.45156e-05, -0.00440258, -0.00080855, -0.000877772, 0.00339134, -0.00295905, 0.000738648)
+
+[node name="pillow" instance=ExtResource("1_bq625")]
+
+[node name="pillow" parent="." index="0"]
+transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0.0999105, 0.0362021, 0.00879776)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="pillow" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pillow/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_10qst")
