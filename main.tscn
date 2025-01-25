@@ -1,16 +1,14 @@
-[gd_scene load_steps=16 format=3 uid="uid://piq1qo6dhgdh"]
+[gd_scene load_steps=14 format=3 uid="uid://piq1qo6dhgdh"]
 
 [ext_resource type="PackedScene" uid="uid://brpt71jl5cg2q" path="res://scenes/player.tscn" id="1_8teri"]
 [ext_resource type="Shader" path="res://shaders/ps1.gdshader" id="1_k7buc"]
 [ext_resource type="PackedScene" uid="uid://c0vn3wljxi7nr" path="res://environment/room.tscn" id="5_dow44"]
 [ext_resource type="PackedScene" uid="uid://cn77ildhp66sp" path="res://environment/cornerroad.tscn" id="5_rk2qt"]
-[ext_resource type="PackedScene" uid="uid://dyy7qou5v3pbc" path="res://scenes/bubbles/bubble_area_on_ground.tscn" id="5_teoff"]
 [ext_resource type="PackedScene" uid="uid://dvvyaffq6qj2p" path="res://environment/emptyroad.tscn" id="5_uw7jg"]
 [ext_resource type="PackedScene" uid="uid://dgguda57ajbii" path="res://environment/endroad.tscn" id="6_1xvsr"]
 [ext_resource type="PackedScene" uid="uid://06y4ptj1rbp0" path="res://environment/crossroad.tscn" id="6_gbfun"]
 [ext_resource type="PackedScene" uid="uid://djru8fesjxq8n" path="res://environment/onewallroad.tscn" id="7_ssf3u"]
 [ext_resource type="PackedScene" uid="uid://b3ag2ldapngtl" path="res://environment/light.tscn" id="9_ie124"]
-[ext_resource type="PackedScene" uid="uid://df7xv0nfo6bja" path="res://scenes/bubbles/bubble_manager.tscn" id="10_alvmu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xegm8"]
 shader = ExtResource("1_k7buc")
@@ -107,8 +105,3 @@ transform = Transform3D(0.965926, 0.148992, -0.211633, -2.5163e-08, 0.817688, 0.
 
 [node name="light5" parent="SubViewport/Node3D/lights" instance=ExtResource("9_ie124")]
 transform = Transform3D(0.00949445, 0.575636, -0.817651, -3.13263e-08, 0.817688, 0.575662, 0.999955, -0.00546551, 0.00776353, -2.59506, 2.17811, -0.0100856)
-
-[node name="BubbleManager" parent="." instance=ExtResource("10_alvmu")]
-
-[node name="BubbleAreaOnGround" parent="BubbleManager" instance=ExtResource("5_teoff")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.26358, 1, 0)
