@@ -57,11 +57,11 @@ func _physics_process(delta: float) -> void:
 		if global_position.distance_to(lift_center) < 0.2:
 			is_moving_to_the_beam_center = false
 			is_accending = true
-			$EndGameTimer.start(30)
+			$EndGameTimer.start(29)
 		else:
 			global_position = global_position.lerp(lift_center, 1.0 * delta)
 	if is_accending: 
-			position.y += JESUS_PULLING_SPEED * delta
+			global_position.y += JESUS_PULLING_SPEED * delta
 	if !inputEnabled:
 		return
 	

@@ -19,7 +19,7 @@ monitoring = false
 shape = SubResource("CylinderShape3D_yf3f4")
 
 [node name="beamLight" parent="." instance=ExtResource("3_fh3ab")]
-transform = Transform3D(1, 0, 0, 0, 0.600999, 0, 0, 0, 1, 0, 0.064564, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.064564, 0)
 visible = false
 
 [connection signal="body_entered" from="EndingTriggerArea" to="." method="_on_ending_trigger_area_body_entered"]
