@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://piq1qo6dhgdh"]
+[gd_scene load_steps=44 format=3 uid="uid://piq1qo6dhgdh"]
 
 [ext_resource type="PackedScene" uid="uid://brpt71jl5cg2q" path="res://scenes/player.tscn" id="1_8teri"]
 [ext_resource type="Shader" path="res://shaders/ps1.gdshader" id="1_k7buc"]
@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://cucgxjsyvb6oc" path="res://scenes/notes/letter_3.tscn" id="27_6mhpn"]
 [ext_resource type="PackedScene" uid="uid://cgy38weex4et6" path="res://scenes/ending/ending_area.tscn" id="28_o5clf"]
 [ext_resource type="PackedScene" uid="uid://dixvo5b04alp4" path="res://environment/hand1.fbx" id="29_itkr2"]
+[ext_resource type="PackedScene" uid="uid://d2xljdwho5rsy" path="res://environment/suit/humanShadow.fbx" id="29_lglro"]
 [ext_resource type="PackedScene" uid="uid://bic6nc5kw1i1x" path="res://environment/hand2.fbx" id="30_kmup7"]
 [ext_resource type="PackedScene" uid="uid://clnh15l03n4ea" path="res://environment/hand3.fbx" id="31_8mkpi"]
 [ext_resource type="PackedScene" uid="uid://ctynu5q6qj62u" path="res://environment/endingItems/bear.tscn" id="32_hnbhw"]
@@ -276,7 +277,57 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.79018)
 
 [node name="EndingModels" type="Node3D" parent="."]
 unique_name_in_owner = true
-visible = false
+
+[node name="humanShadow" parent="EndingModels" instance=ExtResource("29_lglro")]
+transform = Transform3D(-0.66743, 0, -0.744673, 0, 1, 0, 0.744673, 0, -0.66743, 2.13091, 6.5132, -3.99813)
+
+[node name="humanShadow2" parent="EndingModels" instance=ExtResource("29_lglro")]
+transform = Transform3D(-0.900387, 0, 0.43509, 0, 1, 0, -0.43509, 0, -0.900387, -0.848066, 7.89692, -3.99813)
+
+[node name="humanShadow3" parent="EndingModels" instance=ExtResource("29_lglro")]
+transform = Transform3D(-0.846881, 0, -0.531783, 0, 1, 0, 0.531783, 0, -0.846881, 1.04832, 10.1663, -2.69889)
+
+[node name="humanShadow7" parent="EndingModels" instance=ExtResource("29_lglro")]
+transform = Transform3D(-0.66743, 0, -0.744673, 0, 1, 0, 0.744673, 0, -0.66743, 2.13091, 19.2031, -3.99813)
+
+[node name="humanShadow8" parent="EndingModels" instance=ExtResource("29_lglro")]
+transform = Transform3D(-0.900387, 0, 0.43509, 0, 1, 0, -0.43509, 0, -0.900387, -0.848066, 20.8016, -3.99813)
+
+[node name="humanShadow9" parent="EndingModels" instance=ExtResource("29_lglro")]
+transform = Transform3D(-0.846881, 0, -0.531783, 0, 1, 0, 0.531783, 0, -0.846881, 1.04832, 24.3614, -2.69889)
+
+[node name="humanShadow4" parent="EndingModels" instance=ExtResource("29_lglro")]
+transform = Transform3D(-0.66743, 0, -0.744673, 0, 1, 0, 0.744673, 0, -0.66743, 2.13091, 12.2665, -3.99813)
+
+[node name="humanShadow5" parent="EndingModels" instance=ExtResource("29_lglro")]
+transform = Transform3D(-0.900387, 0, 0.43509, 0, 1, 0, -0.43509, 0, -0.900387, -0.848066, 13.6502, -3.99813)
+
+[node name="humanShadow6" parent="EndingModels" instance=ExtResource("29_lglro")]
+transform = Transform3D(-0.846881, 0, -0.531783, 0, 1, 0, 0.531783, 0, -0.846881, 1.04832, 15.9196, -2.69889)
+
+[node name="humanShadow10" parent="EndingModels" instance=ExtResource("29_lglro")]
+transform = Transform3D(0.900387, 0, -0.43509, 0, 1, 0, 0.43509, 0, 0.900387, 2.06371, 10.2778, -6.01176)
+
+[node name="humanShadow11" parent="EndingModels" instance=ExtResource("29_lglro")]
+transform = Transform3D(0.846881, 0, 0.531783, 0, 1, 0, -0.531783, 0, 0.846881, 0.167325, 12.5472, -7.311)
+
+[node name="humanShadow12" parent="EndingModels" instance=ExtResource("29_lglro")]
+transform = Transform3D(0.66743, 0, 0.744673, 0, 1, 0, -0.744673, 0, 0.66743, -0.915265, 21.584, -6.01175)
+
+[node name="humanShadow13" parent="EndingModels" instance=ExtResource("29_lglro")]
+transform = Transform3D(0.900387, 0, -0.43509, 0, 1, 0, 0.43509, 0, 0.900387, 2.06371, 23.1825, -6.01176)
+
+[node name="humanShadow14" parent="EndingModels" instance=ExtResource("29_lglro")]
+transform = Transform3D(0.846881, 0, 0.531783, 0, 1, 0, -0.531783, 0, 0.846881, 0.167325, 26.7423, -7.311)
+
+[node name="humanShadow15" parent="EndingModels" instance=ExtResource("29_lglro")]
+transform = Transform3D(0.66743, 0, 0.744673, 0, 1, 0, -0.744673, 0, 0.66743, -0.915265, 14.6474, -6.01175)
+
+[node name="humanShadow16" parent="EndingModels" instance=ExtResource("29_lglro")]
+transform = Transform3D(0.900387, 0, -0.43509, 0, 1, 0, 0.43509, 0, 0.900387, 2.06371, 16.0311, -6.01176)
+
+[node name="humanShadow17" parent="EndingModels" instance=ExtResource("29_lglro")]
+transform = Transform3D(0.846881, 0, 0.531783, 0, 1, 0, -0.531783, 0, 0.846881, 0.167325, 18.3005, -7.311)
 
 [node name="hand1" parent="EndingModels" instance=ExtResource("29_itkr2")]
 transform = Transform3D(-0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, 13, -1, -6.73205)
