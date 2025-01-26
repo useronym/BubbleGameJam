@@ -277,6 +277,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.79018)
 
 [node name="EndingModels" type="Node3D" parent="."]
 unique_name_in_owner = true
+visible = false
 
 [node name="humanShadow" parent="EndingModels" instance=ExtResource("29_lglro")]
 transform = Transform3D(-0.66743, 0, -0.744673, 0, 1, 0, 0.744673, 0, -0.66743, 2.13091, 6.5132, -3.99813)
