@@ -6,6 +6,7 @@
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_yf3f4"]
 height = 1.0
+radius = 0.1
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ijku3"]
 height = 0.5
@@ -28,7 +29,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.369583, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LiftToJesus"]
 shape = SubResource("CylinderShape3D_ijku3")
-disabled = true
 
 [node name="TestSprite" type="Sprite3D" parent="LiftToJesus/CollisionShape3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.93818, 0)

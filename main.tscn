@@ -98,6 +98,7 @@ render_target_update_mode = 4
 [node name="Node3D" type="Node3D" parent="SubViewport"]
 
 [node name="Player" parent="SubViewport/Node3D" instance=ExtResource("1_8teri")]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.303343, 0.144432, 0.293305)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewport/Node3D"]
@@ -251,6 +252,7 @@ transform = Transform3D(-0.519549, 0, -0.854441, 0, 1, 0, 0.854441, 0, -0.519549
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5328, 3.12548e-07, -50.5032)
 
 [node name="EndingArea" parent="." instance=ExtResource("28_o5clf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.47151)
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.79018)
 
 [connection signal="bubbles_breathed_in" from="BubbleManager" to="SubViewport/Node3D/Player" method="_on_bubble_manager_bubbles_breathed_in"]

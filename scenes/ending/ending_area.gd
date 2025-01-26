@@ -29,8 +29,6 @@ func _on_all_items_collected():
 	
 func _on_ending_trigger_area_body_entered(body):
 	ending_started.emit()
-	$LiftToJesus/CollisionShape3D.disabled = false
-
-	
+		
 	is_ending_in_progress = true
 	pass # Replace with function body.
