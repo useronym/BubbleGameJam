@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://piq1qo6dhgdh"]
+[gd_scene load_steps=43 format=3 uid="uid://piq1qo6dhgdh"]
 
 [ext_resource type="PackedScene" uid="uid://brpt71jl5cg2q" path="res://scenes/player.tscn" id="1_8teri"]
 [ext_resource type="Shader" path="res://shaders/ps1.gdshader" id="1_k7buc"]
@@ -28,6 +28,15 @@
 [ext_resource type="PackedScene" uid="uid://b47ev41epxl48" path="res://scenes/notes/letter_2.tscn" id="26_qkuc0"]
 [ext_resource type="PackedScene" uid="uid://cucgxjsyvb6oc" path="res://scenes/notes/letter_3.tscn" id="27_6mhpn"]
 [ext_resource type="PackedScene" uid="uid://cgy38weex4et6" path="res://scenes/ending/ending_area.tscn" id="28_o5clf"]
+[ext_resource type="PackedScene" uid="uid://dixvo5b04alp4" path="res://environment/hand1.fbx" id="29_itkr2"]
+[ext_resource type="PackedScene" uid="uid://bic6nc5kw1i1x" path="res://environment/hand2.fbx" id="30_kmup7"]
+[ext_resource type="PackedScene" uid="uid://clnh15l03n4ea" path="res://environment/hand3.fbx" id="31_8mkpi"]
+[ext_resource type="PackedScene" uid="uid://ctynu5q6qj62u" path="res://environment/endingItems/bear.tscn" id="32_hnbhw"]
+[ext_resource type="PackedScene" uid="uid://dwm786k5i5gex" path="res://environment/endingItems/bottle.tscn" id="33_7g5hf"]
+[ext_resource type="PackedScene" uid="uid://bgut6k2ta2cps" path="res://environment/endingItems/car.tscn" id="34_gm1aa"]
+[ext_resource type="PackedScene" uid="uid://t0sdxggi5wdd" path="res://environment/endingItems/ring.tscn" id="35_uieku"]
+[ext_resource type="PackedScene" uid="uid://crln8uvm6jv57" path="res://environment/endingItems/tv.tscn" id="36_3m6si"]
+[ext_resource type="PackedScene" uid="uid://dfpkv62i1lbpk" path="res://environment/endingItems/watch.tscn" id="37_6h5g2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xegm8"]
 shader = ExtResource("1_k7buc")
@@ -254,5 +263,34 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5328, 3.12548e-07, -50.503
 [node name="EndingArea" parent="." instance=ExtResource("28_o5clf")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.79018)
+
+[node name="EndingModels" type="Node3D" parent="."]
+
+[node name="hand1" parent="EndingModels" instance=ExtResource("29_itkr2")]
+transform = Transform3D(-0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, 13, -1, -6.73205)
+
+[node name="hand2" parent="EndingModels" instance=ExtResource("30_kmup7")]
+transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, -11, -9, -17)
+
+[node name="hand3" parent="EndingModels" instance=ExtResource("31_8mkpi")]
+transform = Transform3D(0.836516, 0.224144, 0.5, -0.258819, 0.965926, 0, -0.482963, -0.12941, 0.866025, 13, -8, -20)
+
+[node name="bear" parent="EndingModels" instance=ExtResource("32_hnbhw")]
+transform = Transform3D(6.3, 0, 0, 0, 6.3, 0, 0, 0, 6.3, 3.16439, 6.3, -30.2586)
+
+[node name="bottle" parent="EndingModels" instance=ExtResource("33_7g5hf")]
+transform = Transform3D(8.3, 0, 0, 0, 8.3, 0, 0, 0, 8.3, -2, 5, -27)
+
+[node name="car" parent="EndingModels" instance=ExtResource("34_gm1aa")]
+transform = Transform3D(4.2, 0, 0, 0, 4.2, 0, 0, 0, 4.2, 1, 5, -41.2)
+
+[node name="ring" parent="EndingModels" instance=ExtResource("35_uieku")]
+transform = Transform3D(9.6, 0, 0, 0, 9.6, 0, 0, 0, 9.6, -8, 3, -39)
+
+[node name="tv" parent="EndingModels" instance=ExtResource("36_3m6si")]
+transform = Transform3D(3.7, 0, 0, 0, 3.7, 0, 0, 0, 3.7, -8, 3.7, -32.3)
+
+[node name="watch" parent="EndingModels" instance=ExtResource("37_6h5g2")]
+transform = Transform3D(17.4, 0, 0, 0, 17.4, 0, 0, 0, 17.4, 7.66798, 7.46732, -24.5543)
 
 [connection signal="bubbles_breathed_in" from="BubbleManager" to="SubViewport/Node3D/Player" method="_on_bubble_manager_bubbles_breathed_in"]
