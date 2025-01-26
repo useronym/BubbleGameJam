@@ -10,9 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://df7xv0nfo6bja" path="res://scenes/bubbles/bubble_manager.tscn" id="10_alvmu"]
 [ext_resource type="PackedScene" uid="uid://b2clvwp6pfoxk" path="res://scenes/item/items_manager.tscn" id="13_2j1is"]
 [ext_resource type="AudioStream" uid="uid://6hooqjm4cwgd" path="res://environment/audio/bubble_env.wav" id="15_0f3oo"]
-[ext_resource type="PackedScene" uid="uid://b7r1ktkjyop6m" path="res://scenes/item/item_suit.tscn" id="15_3d437"]
-[ext_resource type="PackedScene" path="res://scenes/item/item_helmet.tscn" id="15_pxotq"]
-[ext_resource type="PackedScene" path="res://scenes/item/item_tank.tscn" id="16_yh77s"]
+[ext_resource type="PackedScene" uid="uid://8ctxyxkkmgeo" path="res://scenes/item/item_suit.tscn" id="15_3d437"]
+[ext_resource type="PackedScene" uid="uid://nw1hiirwbbl5" path="res://scenes/item/item_helmet.tscn" id="15_pxotq"]
+[ext_resource type="PackedScene" uid="uid://c0k22utsto20l" path="res://scenes/item/item_tank.tscn" id="16_yh77s"]
 [ext_resource type="PackedScene" uid="uid://ct7qc83c4ckvv" path="res://scenes/notes/note_1.tscn" id="19_2wapo"]
 [ext_resource type="AudioStream" uid="uid://bw4q73n10c0ss" path="res://environment/audio/harmony_1.wav" id="19_xrs77"]
 [ext_resource type="AudioStream" uid="uid://d34auphr31u7" path="res://environment/audio/harmony_2.wav" id="20_2qe0c"]
@@ -283,21 +283,21 @@ transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819
 transform = Transform3D(0.836516, 0.224144, 0.5, -0.258819, 0.965926, 0, -0.482963, -0.12941, 0.866025, 13, -8, -20)
 
 [node name="bear" parent="EndingModels" instance=ExtResource("32_hnbhw")]
-transform = Transform3D(6.3, 0, 0, 0, 6.3, 0, 0, 0, 6.3, 3.16439, 6.3, -30.2586)
+transform = Transform3D(3.51063, -1.9475, -0.637897, -1.74186, -2.16911, -2.96397, 1.07962, 2.8331, -2.7078, 5.05265, 4.73515, -28.9625)
 
 [node name="bottle" parent="EndingModels" instance=ExtResource("33_7g5hf")]
-transform = Transform3D(8.3, 0, 0, 0, 8.3, 0, 0, 0, 8.3, -2, 5, -27)
+transform = Transform3D(0.54478, 5.40696, 6.2736, 5.06481, 4.757, -4.53968, -6.55293, 4.12623, -2.98719, -3.94456, 3.01727, -34.6345)
 
 [node name="car" parent="EndingModels" instance=ExtResource("34_gm1aa")]
-transform = Transform3D(4.2, 0, 0, 0, 4.2, 0, 0, 0, 4.2, 1, 5, -41.2)
+transform = Transform3D(0.16808, -2.68652, 1.96043, -3.3235, -0.207932, 1.94466e-09, 0.122413, -1.9566, -2.69177, 1.51306, 5.83823, -18.5291)
 
 [node name="ring" parent="EndingModels" instance=ExtResource("35_uieku")]
-transform = Transform3D(9.6, 0, 0, 0, 9.6, 0, 0, 0, 9.6, -8, 3, -39)
+transform = Transform3D(2.25964, 5.72978, 7.36367, 0, 7.57655, -5.89542, -9.33027, 1.38766, 1.78336, -5.46535, 3.54063, -39)
 
 [node name="tv" parent="EndingModels" instance=ExtResource("36_3m6si")]
-transform = Transform3D(3.7, 0, 0, 0, 3.7, 0, 0, 0, 3.7, -8, 3.7, -32.3)
+transform = Transform3D(-1.78972, -1.7494e-07, 2.32618, -1.75722, 1.92317, -1.35197, -1.52424, -2.21712, -1.17272, -5.68689, 2.98925, -27.2198)
 
 [node name="watch" parent="EndingModels" instance=ExtResource("37_6h5g2")]
-transform = Transform3D(17.4, 0, 0, 0, 17.4, 0, 0, 0, 17.4, 7.66798, 7.46732, -24.5543)
+transform = Transform3D(-6.13434, -6.72784, -5.86473, 8.59919e-08, 7.11638, -8.1637, 8.92518, -4.62409, -4.03087, 2.8829, 4.29872, -34.677)
 
 [connection signal="bubbles_breathed_in" from="BubbleManager" to="SubViewport/Node3D/Player" method="_on_bubble_manager_bubbles_breathed_in"]
