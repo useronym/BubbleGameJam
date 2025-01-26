@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="player-template"
+config/name="out-of-air"
+config/description="Out of air."
 config/version="1.0"
 run/main_scene="res://scenes/mainMenu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
