@@ -189,14 +189,41 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="DeathScreen/CenterContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 36
 text = "You drowned.
 
 Hint: Look for air."
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Objective" type="CenterContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -231.0
+offset_top = -320.0
+offset_right = 232.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label2" type="Label" parent="Objective"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Find 3 suit parts to leave."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HideObjective" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
 [connection signal="Closing" from="PauseNode/Settings" to="PauseNode" method="_on_close_button"]
 [connection signal="pressed" from="PauseNode/VBoxContainer/Button" to="PauseNode" method="_unpause"]
 [connection signal="pressed" from="PauseNode/VBoxContainer/Button2" to="PauseNode" method="_settings"]
 [connection signal="pressed" from="PauseNode/VBoxContainer/Button3" to="PauseNode" method="_quit"]
 [connection signal="pressed" from="PauseNode/VBoxContainer/Button4" to="PauseNode" method="_actually_quit"]
+[connection signal="timeout" from="HideObjective" to="." method="_on_hide_objective_timeout"]

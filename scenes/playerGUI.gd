@@ -38,3 +38,7 @@ func _on_player_air_capacity_updated(new_value: int):
 
 func _on_player_character_died() -> void:
 	death_screen.visible = true
+
+
+func _on_hide_objective_timeout() -> void:
+	$Objective.visible = false
