@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dwm786k5i5gex"]
+
+[ext_resource type="PackedScene" uid="uid://behfxlld63gat" path="res://environment/endingItems/bottle.fbx" id="1_qdggc"]
+[ext_resource type="Script" path="res://environment/items/float.gd" id="2_v4yid"]
+
+[node name="bottle" instance=ExtResource("1_qdggc")]
+
+[node name="Circle_017" parent="." index="0"]
+script = ExtResource("2_v4yid")
+range = 1.0

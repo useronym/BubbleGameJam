@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://t0sdxggi5wdd"]
+
+[ext_resource type="PackedScene" uid="uid://e16iaf2vwbft" path="res://environment/endingItems/ring.fbx" id="1_pne8p"]
+[ext_resource type="Script" path="res://environment/items/float.gd" id="2_px74s"]
+
+[node name="ring" instance=ExtResource("1_pne8p")]
+
+[node name="Circle_037" parent="." index="0"]
+script = ExtResource("2_px74s")
+range = 1.0

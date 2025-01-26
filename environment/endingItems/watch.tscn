@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfpkv62i1lbpk"]
+
+[ext_resource type="PackedScene" uid="uid://6tfbfyq85mem" path="res://environment/endingItems/watch.fbx" id="1_m8oai"]
+[ext_resource type="Script" path="res://environment/items/float.gd" id="2_ympwg"]
+
+[node name="watch" instance=ExtResource("1_m8oai")]
+
+[node name="Circle_036" parent="." index="0"]
+script = ExtResource("2_ympwg")
+range = 1.0

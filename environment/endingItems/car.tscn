@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgut6k2ta2cps"]
+
+[ext_resource type="PackedScene" uid="uid://ct6x6wal4wt67" path="res://environment/endingItems/car.fbx" id="1_fq4nw"]
+[ext_resource type="Script" path="res://environment/items/float.gd" id="2_736tx"]
+
+[node name="car" instance=ExtResource("1_fq4nw")]
+
+[node name="car" parent="." index="0"]
+script = ExtResource("2_736tx")
+range = 1.0

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctynu5q6qj62u"]
+
+[ext_resource type="PackedScene" uid="uid://itedpi7txvji" path="res://environment/endingItems/bear.fbx" id="1_iwsfv"]
+[ext_resource type="Script" path="res://environment/items/float.gd" id="2_cbhod"]
+
+[node name="bear" instance=ExtResource("1_iwsfv")]
+
+[node name="bear" parent="." index="0"]
+script = ExtResource("2_cbhod")
+range = 1.0

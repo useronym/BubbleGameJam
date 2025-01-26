@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://crln8uvm6jv57"]
+
+[ext_resource type="PackedScene" uid="uid://bfe8r753c35c5" path="res://environment/endingItems/tv.fbx" id="1_00nqr"]
+[ext_resource type="Script" path="res://environment/items/float.gd" id="2_tuxpb"]
+
+[node name="tv" instance=ExtResource("1_00nqr")]
+
+[node name="Cube" parent="." index="0"]
+script = ExtResource("2_tuxpb")
+range = 1.0
