@@ -48,6 +48,9 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	GameManager.player = self
 	update_air_capacity(self.CURRENT_AIR_CAPACITY)
+	# Required in build for some reason
+	await get_tree().create_timer(0.25).timeout
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _physics_process(delta: float) -> void:
 	if is_moving_to_the_beam_center:
