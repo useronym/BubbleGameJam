@@ -203,6 +203,7 @@ volume_db = -12.0
 unit_size = 1.0
 max_db = -3.0
 autoplay = true
+bus = &"To Be Compressed"
 
 [node name="Harmony 2" type="AudioStreamPlayer3D" parent="Audio"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.38167, 0, -50.393)
@@ -211,6 +212,7 @@ volume_db = -12.0
 unit_size = 1.0
 max_db = -3.0
 autoplay = true
+bus = &"To Be Compressed"
 
 [node name="Harmony 3" type="AudioStreamPlayer3D" parent="Audio"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.7967, 0, -29.0803)
@@ -219,6 +221,7 @@ volume_db = -18.0
 unit_size = 1.0
 max_db = -3.0
 autoplay = true
+bus = &"To Be Compressed"
 
 [node name="Harmony 4" type="AudioStreamPlayer3D" parent="Audio"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.41042, 0.578111, -50.603)
@@ -227,6 +230,7 @@ volume_db = -6.0
 unit_size = 6.0
 max_db = -6.0
 autoplay = true
+bus = &"To Be Compressed"
 
 [node name="Rythm" type="AudioStreamPlayer3D" parent="Audio"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.31192)
@@ -235,6 +239,7 @@ stream = ExtResource("22_5dyo7")
 volume_db = -12.0
 unit_size = 7.0
 panning_strength = 3.0
+bus = &"To Be Compressed"
 
 [node name="Notes" type="Node3D" parent="."]
 

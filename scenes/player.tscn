@@ -133,7 +133,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.76959, 0)
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_wef0u")
-volume_db = 12.0
+volume_db = 6.0
+bus = &"Death Sidechain"
 
 [connection signal="air_capacity_updated" from="." to="PlayerGUI" method="_on_player_air_capacity_updated"]
 [connection signal="character_died" from="." to="PlayerGUI" method="_on_player_character_died"]
