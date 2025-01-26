@@ -5,7 +5,7 @@
 [node name="Item" instance=ExtResource("1_4inm8")]
 
 [node name="Area3D" parent="." index="0"]
-text = "Hello my old friend. So much time had passed.
+text = "[i]Hello my old friend. So much time had passed.
 
 I remember the very beginning. It felt so easy and light. Like swimming in a warm pond in late summer. You don’t notice a thing until the water becomes too heavy to rise again.
 
@@ -13,4 +13,4 @@ The body is heavy, limbs are weak. Every inhale scrapes like sandpaper. The more
 
 So when the last traces of surface shimmer far above, maybe too far away to still believe… don't think you're not part of that world anymore. Keep reaching.
 
-I still believe in you. The last one. And I am the only one who can help."
+I still believe in you. The last one. And I am the only one who can help.[/i]"

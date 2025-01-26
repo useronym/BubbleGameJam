@@ -5,7 +5,7 @@
 [node name="Item" instance=ExtResource("1_86sg4")]
 
 [node name="Area3D" parent="." index="0"]
-text = "I don't know how to reach you anymore. It's like you're deep underwater. Do you still remember how we used to be?
+text = "[i]I don't know how to reach you anymore. It's like you're deep underwater. Do you still remember how we used to be?
 
-I don't want to believe that it's too late. And I don't want to lose you. But I can't save you if you don't want to be saved.
+I don't want to believe that it's too late. And I don't want to lose you. But I can't save you if you don't want to be saved.[/i]
 "
