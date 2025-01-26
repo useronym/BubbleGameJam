@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://mtsnhob3ue78"]
+[gd_scene load_steps=15 format=3 uid="uid://mtsnhob3ue78"]
 
 [ext_resource type="PackedScene" uid="uid://c0vn3wljxi7nr" path="res://environment/room.tscn" id="1_1u23y"]
 [ext_resource type="PackedScene" uid="uid://cn77ildhp66sp" path="res://environment/cornerroad.tscn" id="2_unixm"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://crwt3qwq323mk" path="res://environment/items/cans_outside.tscn" id="11_c4urb"]
 [ext_resource type="PackedScene" uid="uid://8glmawo2wqdp" path="res://environment/items/cans.tscn" id="12_4qbtl"]
 [ext_resource type="PackedScene" uid="uid://cymj6e86kyvns" path="res://environment/items/bed.tscn" id="13_e726i"]
+[ext_resource type="PackedScene" uid="uid://cl6e84ioog1p1" path="res://environment/items/pillow_double.tscn" id="14_nonpu"]
 
 [node name="level" type="Node3D"]
 
@@ -381,8 +382,6 @@ transform = Transform3D(-4.37112e-08, 0, 1, 0, 1, 0, -1, 0, -4.37112e-08, -5, 0,
 [node name="SubViewport_Node3D_level#onewallroad11" parent="." instance=ExtResource("6_366rb")]
 transform = Transform3D(-4.37112e-08, 0, 1, 0, 1, 0, -1, 0, -4.37112e-08, 0, 0, 10)
 
-[node name="SubViewport_Node3D_level#room" parent="." instance=ExtResource("1_1u23y")]
-
 [node name="SubViewport_Node3D_level#streightroad" parent="." instance=ExtResource("7_88rua")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
 
@@ -428,6 +427,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16818, 0, 0.226254)
 [node name="rack2" parent="." instance=ExtResource("9_a2k7y")]
 transform = Transform3D(-0.391374, 0.920232, 0, 0, 0, -1, -0.920232, -0.391374, 0, 0.657402, 2.26824, -3.95633)
 
+[node name="rack5" parent="." instance=ExtResource("9_a2k7y")]
+transform = Transform3D(-0.659979, -0.0532581, 0.749394, -0.738451, -0.137597, -0.66012, 0.138271, -0.989056, 0.0514829, 5.01013, 2.11363, -27.0995)
+
+[node name="rack6" parent="." instance=ExtResource("9_a2k7y")]
+transform = Transform3D(-0.504985, -0.0549809, 0.861375, 0.0245491, -0.998481, -0.0493401, 0.86278, -0.00376993, 0.505567, 6.02553, 1.88392, -41.2746)
+
 [node name="rack3" parent="." instance=ExtResource("9_a2k7y")]
 transform = Transform3D(-2.42721e-08, -0.55528, -0.831664, 1, -4.37114e-08, 2.11758e-22, -3.63532e-08, -0.831664, 0.55528, 0.402483, 0.271771, 0.307881)
 
@@ -440,8 +445,17 @@ transform = Transform3D(0.975373, -0.220561, 0, 0.217548, 0.962047, -0.164738, 0
 [node name="cansOutside" parent="." instance=ExtResource("11_c4urb")]
 transform = Transform3D(0.981266, 0, -0.192659, 0, 1, 0, 0.192659, 0, 0.981266, -0.907834, 0.316321, -3.4068)
 
+[node name="cansOutside2" parent="." instance=ExtResource("11_c4urb")]
+transform = Transform3D(-0.991388, 0, -0.130959, 0, 1, 0, 0.130959, 0, -0.991388, -7.24207, 1.09148, -42.6887)
+
 [node name="cans" parent="." instance=ExtResource("12_4qbtl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.298723, 0.803835, 2.18691)
 
 [node name="bed" parent="." instance=ExtResource("13_e726i")]
 transform = Transform3D(0.99857, -0.0534683, -0.000243566, 0.0534688, 0.998559, 0.00454878, 0, -0.00455529, 0.99999, 1.73145, 0.456457, -0.269653)
+
+[node name="bed2" parent="." instance=ExtResource("13_e726i")]
+transform = Transform3D(3.31108e-09, -0.0045552, 0.99999, 0.0782156, -0.996926, -0.00454125, 0.996937, 0.0782146, 0.000356283, -2.26855, 2.11313, -32.7245)
+
+[node name="pillow3" parent="." instance=ExtResource("14_nonpu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.32302, 1.97279, -23.0477)
