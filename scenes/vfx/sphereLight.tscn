@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://ci0re08pj5p0h"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h1qg4"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+specular_mode = 2
+disable_ambient_light = true
+albedo_color = Color(1, 1, 1, 0.1)
+disable_receive_shadows = true
+proximity_fade_enabled = true
+proximity_fade_distance = 13.41
+
+[sub_resource type="SphereMesh" id="SphereMesh_v1e5t"]
+material = SubResource("StandardMaterial3D_h1qg4")
+
+[node name="SphereLight" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(14.9607, 0, 0, 0, 7.55223, 0, 0, 0, 14.9607, 0, 0, 0)
+mesh = SubResource("SphereMesh_v1e5t")
