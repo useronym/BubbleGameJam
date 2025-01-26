@@ -16,7 +16,7 @@ script = ExtResource("1_614se")
 InteractText = "Press [E] to read"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28833, 0.637787, 0.276428)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 shape = SubResource("BoxShape3D_7skui")
 
 [node name="letter" parent="Area3D/CollisionShape3D" instance=ExtResource("2_aldbs")]

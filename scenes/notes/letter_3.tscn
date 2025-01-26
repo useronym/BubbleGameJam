@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cucgxjsyvb6oc"]
+
+[ext_resource type="PackedScene" uid="uid://c4mslqp868uk4" path="res://scenes/notes/note.tscn" id="1_sal5n"]
+
+[node name="Item" instance=ExtResource("1_sal5n")]
+
+[node name="Area3D" parent="." index="0"]
+text = " I remember you. To you, I was just a blurry face in the headlights. But I remember you. I remember every second of that night.
+I’m not writing this to make you guilty. I know you’re no longer capable of that. I write this because sometimes I find myself wondering how it is to be you.
+
+Sometimes I wish I could hate you. Maybe it would make things easier. But I just feel sorry for you."
