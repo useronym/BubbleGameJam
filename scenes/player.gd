@@ -24,13 +24,16 @@ var currentState : CharacterState = CharacterState.WALKING
 @export var mouse_sensitivity := 0.1
 
 var CURRENT_AIR_CAPACITY := 100
+const JESUS_PULLING_SPEED = 1.0
 
 const MAX_AIR_CAPACITY := 100
 const MIN_AIR_CAPACITY := 0
 const DECREMENT_AIR_CAPACITY_VALUE_SECOND = 2.5
 const INCREMENT_AIR_CAPACITY_VALUE = 50
 
-
+var is_accending = false
+var is_moving_to_the_beam_center = false
+var lift_center = Vector3()
 var inputEnabled := true # can the player move?
 
 var aimlookEnabled := true # can the player look around?
@@ -47,6 +50,14 @@ func _ready():
 	update_air_capacity(self.CURRENT_AIR_CAPACITY)
 
 func _physics_process(delta: float) -> void:
+	if is_moving_to_the_beam_center:
+		if global_position.distance_to(lift_center) < 0.2:
+			is_moving_to_the_beam_center = false
+			is_accending = true
+		else:
+			global_position = global_position.lerp(lift_center, 1.0 * delta)
+	if is_accending: 
+			position.y += JESUS_PULLING_SPEED * delta
 	if !inputEnabled:
 		return
 	
@@ -159,6 +170,11 @@ func _on_bubble_manager_bubbles_breathed_in():
 	increase_air_capacity()
 	pass # Replace with function body.
 
-func _on_ending_started():
-	self.inputEnabled = false
+func _on_ending_started(center):
+	#position.x = center.x
+	#position.y = center.y
+	lift_center = center
+	is_moving_to_the_beam_center = true
+	inputEnabled = false
+
 #endregion
