@@ -57,7 +57,7 @@ func _physics_process(delta: float) -> void:
 		if global_position.distance_to(lift_center) < 0.2:
 			is_moving_to_the_beam_center = false
 			is_accending = true
-			$EndGameTimer.start(29)
+			$EndGameTimer.start(27)
 		else:
 			global_position = global_position.lerp(lift_center, 1.0 * delta)
 	if is_accending: 
@@ -193,11 +193,12 @@ func _on_ending_started(center):
 	inputEnabled = false
 	DECREMENT_AIR_CAPACITY_VALUE_SECOND = 0
 	$WalkingAudio.stop()
+	$EndGameMusic.play()
 
 #endregion
 
 
 func _on_end_game_timer_timeout() -> void:
 	is_accending = false
-	await get_tree().create_timer(5).timeout
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	get_tree().change_scene_to_file("res://scenes/mainMenu.tscn")

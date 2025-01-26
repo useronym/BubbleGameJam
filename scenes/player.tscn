@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://brpt71jl5cg2q"]
+[gd_scene load_steps=14 format=3 uid="uid://brpt71jl5cg2q"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_yofdb"]
 [ext_resource type="AudioStream" uid="uid://b7ggktlgopsnw" path="res://environment/audio/walking_loop.wav" id="2_0kegd"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ci34j0jbw57wy" path="res://scenes/cookie_6.jpg" id="3_225f1"]
 [ext_resource type="PackedScene" uid="uid://dcdh460c80rd" path="res://scenes/vfx/floatingParticulates.tscn" id="4_calqc"]
 [ext_resource type="AudioStream" uid="uid://cei0len1b87su" path="res://scenes/drowning_one_shot.wav" id="6_wef0u"]
+[ext_resource type="AudioStream" uid="uid://cm7cuwbu302si" path="res://scenes/ending.wav" id="7_rciq0"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_jse87"]
 
@@ -138,6 +139,10 @@ bus = &"Death Sidechain"
 
 [node name="EndGameTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="EndGameMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_rciq0")
+bus = &"Ambient"
 
 [connection signal="air_capacity_updated" from="." to="PlayerGUI" method="_on_player_air_capacity_updated"]
 [connection signal="character_died" from="." to="PlayerGUI" method="_on_player_character_died"]
