@@ -10,9 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://df7xv0nfo6bja" path="res://scenes/bubbles/bubble_manager.tscn" id="10_alvmu"]
 [ext_resource type="PackedScene" uid="uid://b2clvwp6pfoxk" path="res://scenes/item/items_manager.tscn" id="13_2j1is"]
 [ext_resource type="AudioStream" uid="uid://6hooqjm4cwgd" path="res://environment/audio/bubble_env.wav" id="15_0f3oo"]
-[ext_resource type="PackedScene" uid="uid://8ctxyxkkmgeo" path="res://scenes/item/item_suit.tscn" id="15_3d437"]
-[ext_resource type="PackedScene" uid="uid://nw1hiirwbbl5" path="res://scenes/item/item_helmet.tscn" id="15_pxotq"]
-[ext_resource type="PackedScene" uid="uid://c0k22utsto20l" path="res://scenes/item/item_tank.tscn" id="16_yh77s"]
+[ext_resource type="PackedScene" uid="uid://b7r1ktkjyop6m" path="res://scenes/item/item_suit.tscn" id="15_3d437"]
+[ext_resource type="PackedScene" path="res://scenes/item/item_helmet.tscn" id="15_pxotq"]
+[ext_resource type="PackedScene" path="res://scenes/item/item_tank.tscn" id="16_yh77s"]
 [ext_resource type="PackedScene" uid="uid://ct7qc83c4ckvv" path="res://scenes/notes/note_1.tscn" id="19_2wapo"]
 [ext_resource type="AudioStream" uid="uid://bw4q73n10c0ss" path="res://environment/audio/harmony_1.wav" id="19_xrs77"]
 [ext_resource type="AudioStream" uid="uid://d34auphr31u7" path="res://environment/audio/harmony_2.wav" id="20_2qe0c"]
@@ -180,7 +180,7 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.78072)
 
 [node name="ItemSuit" parent="ItemsManager" instance=ExtResource("15_3d437")]
-transform = Transform3D(-0.922215, 0, 0.386679, 0, 1, 0, -0.386679, 0, -0.922215, -15.784, -1.90735e-06, -23.5955)
+transform = Transform3D(-0.922215, 0, 0.386679, 0, 1, 0, -0.386679, 0, -0.922215, -15.5378, -1.90735e-06, -23.5199)
 
 [node name="ItemHelmet" parent="ItemsManager" instance=ExtResource("15_pxotq")]
 transform = Transform3D(0.82268, 0.511264, -0.248609, -1.23356e-08, 0.437304, 0.899314, 0.568504, -0.739848, 0.359761, -5.59826, 0, -44.568)
@@ -189,6 +189,7 @@ transform = Transform3D(0.82268, 0.511264, -0.248609, -1.23356e-08, 0.437304, 0.
 transform = Transform3D(-0.149777, 0.496719, -0.85489, 0, 0.864643, 0.502386, 0.98872, 0.0752459, -0.129504, 15.8021, 0, -25.6778)
 
 [node name="Audio" type="Node3D" parent="."]
+unique_name_in_owner = true
 
 [node name="Background F" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("15_0f3oo")
@@ -196,39 +197,43 @@ autoplay = true
 script = SubResource("GDScript_u8s5s")
 
 [node name="Harmony 1" type="AudioStreamPlayer3D" parent="Audio"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.73963, 0, -53.1486)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.8435, 2.38419e-07, -31.4771)
 stream = ExtResource("19_xrs77")
 volume_db = -12.0
 unit_size = 1.0
+max_db = -3.0
 autoplay = true
 
 [node name="Harmony 2" type="AudioStreamPlayer3D" parent="Audio"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.1999, 0, -30.2605)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.38167, 0, -50.393)
 stream = ExtResource("20_2qe0c")
 volume_db = -12.0
 unit_size = 1.0
+max_db = -3.0
 autoplay = true
 
 [node name="Harmony 3" type="AudioStreamPlayer3D" parent="Audio"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.1748, 0, -27.6709)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.7967, 0, -29.0803)
 stream = ExtResource("21_r51fk")
 volume_db = -18.0
 unit_size = 1.0
+max_db = -3.0
 autoplay = true
 
 [node name="Harmony 4" type="AudioStreamPlayer3D" parent="Audio"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.23484, 0.578111, -51.0287)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.41042, 0.578111, -50.603)
 stream = ExtResource("22_q7mg7")
 volume_db = -6.0
-unit_size = 2.5
+unit_size = 6.0
+max_db = -6.0
 autoplay = true
 
 [node name="Rythm" type="AudioStreamPlayer3D" parent="Audio"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.31192)
+visible = false
 stream = ExtResource("22_5dyo7")
 volume_db = -12.0
 unit_size = 7.0
-autoplay = true
 panning_strength = 3.0
 
 [node name="Notes" type="Node3D" parent="."]
@@ -265,6 +270,8 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.79018)
 
 [node name="EndingModels" type="Node3D" parent="."]
+unique_name_in_owner = true
+visible = false
 
 [node name="hand1" parent="EndingModels" instance=ExtResource("29_itkr2")]
 transform = Transform3D(-0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, 13, -1, -6.73205)
