@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://piq1qo6dhgdh"]
+[gd_scene load_steps=33 format=3 uid="uid://piq1qo6dhgdh"]
 
 [ext_resource type="PackedScene" uid="uid://brpt71jl5cg2q" path="res://scenes/player.tscn" id="1_8teri"]
 [ext_resource type="Shader" path="res://shaders/ps1.gdshader" id="1_k7buc"]
@@ -13,11 +13,20 @@
 [ext_resource type="PackedScene" uid="uid://8ctxyxkkmgeo" path="res://scenes/item/item_suit.tscn" id="15_3d437"]
 [ext_resource type="PackedScene" uid="uid://nw1hiirwbbl5" path="res://scenes/item/item_helmet.tscn" id="15_pxotq"]
 [ext_resource type="PackedScene" uid="uid://c0k22utsto20l" path="res://scenes/item/item_tank.tscn" id="16_yh77s"]
+[ext_resource type="PackedScene" uid="uid://ct7qc83c4ckvv" path="res://scenes/notes/note_1.tscn" id="19_2wapo"]
 [ext_resource type="AudioStream" uid="uid://bw4q73n10c0ss" path="res://environment/audio/harmony_1.wav" id="19_xrs77"]
 [ext_resource type="AudioStream" uid="uid://d34auphr31u7" path="res://environment/audio/harmony_2.wav" id="20_2qe0c"]
+[ext_resource type="PackedScene" uid="uid://bsfrytn00jyah" path="res://scenes/notes/note_2.tscn" id="20_xe1tk"]
+[ext_resource type="PackedScene" uid="uid://dglvqf07v68p4" path="res://scenes/notes/note_3.tscn" id="21_04fnd"]
 [ext_resource type="AudioStream" uid="uid://cd064vddnu426" path="res://environment/audio/harmony_3.wav" id="21_r51fk"]
 [ext_resource type="AudioStream" uid="uid://dyvpcdtn61qs0" path="res://environment/audio/rythm.wav" id="22_5dyo7"]
+[ext_resource type="PackedScene" uid="uid://cqmw0o10d5bbx" path="res://scenes/notes/note_4.tscn" id="22_moe2y"]
 [ext_resource type="AudioStream" uid="uid://3n2bdjdfy8yk" path="res://environment/audio/harmony_4.wav" id="22_q7mg7"]
+[ext_resource type="PackedScene" uid="uid://d4cxldn75oo5w" path="res://scenes/notes/note_5.tscn" id="23_dkf71"]
+[ext_resource type="PackedScene" uid="uid://bdpkkjhu336vw" path="res://scenes/notes/letter_1.tscn" id="24_ryjs6"]
+[ext_resource type="PackedScene" uid="uid://kfxjhbanolqj" path="res://scenes/notes/letter_4.tscn" id="25_w52qj"]
+[ext_resource type="PackedScene" uid="uid://b47ev41epxl48" path="res://scenes/notes/letter_2.tscn" id="26_qkuc0"]
+[ext_resource type="PackedScene" uid="uid://cucgxjsyvb6oc" path="res://scenes/notes/letter_3.tscn" id="27_6mhpn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xegm8"]
 shader = ExtResource("1_k7buc")
@@ -209,5 +218,34 @@ volume_db = -12.0
 unit_size = 7.0
 autoplay = true
 panning_strength = 3.0
+
+[node name="Notes" type="Node3D" parent="."]
+
+[node name="note_1" parent="Notes" instance=ExtResource("19_2wapo")]
+transform = Transform3D(0.474534, 0, 0.880237, 0, 1, 0, -0.880237, 0, 0.474534, -1.02556, 1.19209e-07, -1.71757)
+
+[node name="note_2" parent="Notes" instance=ExtResource("20_xe1tk")]
+transform = Transform3D(0.297825, 0, -0.954621, 0, 1, 0, 0.954621, 0, 0.297825, 2.73626, 4.32253e-07, -24.499)
+
+[node name="note_3" parent="Notes" instance=ExtResource("21_04fnd")]
+transform = Transform3D(-0.107149, 0, -0.994243, 0, 1, 0, 0.994243, 0, -0.107149, 10.5373, 3.08483e-07, -29.4287)
+
+[node name="note_4" parent="Notes" instance=ExtResource("22_moe2y")]
+transform = Transform3D(-0.864564, 0, 0.502522, 0, 1, 0, -0.502522, 0, -0.864564, -10.296, -6.14512e-07, -34.2721)
+
+[node name="note_5" parent="Notes" instance=ExtResource("23_dkf71")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2364, -2.61309e-07, -42.192)
+
+[node name="letter_1" parent="Notes" instance=ExtResource("24_ryjs6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.107176, -4.98872e-07, 3.30209)
+
+[node name="letter_4" parent="Notes" instance=ExtResource("25_w52qj")]
+transform = Transform3D(0.962559, 0, -0.271071, 0, 1, 0, 0.271071, 0, 0.962559, 5.76813, -1.8332e-07, -49.8173)
+
+[node name="letter_2" parent="Notes" instance=ExtResource("26_qkuc0")]
+transform = Transform3D(-0.519549, 0, -0.854441, 0, 1, 0, 0.854441, 0, -0.519549, 8.40551, -1.52869e-07, -14.2808)
+
+[node name="letter_3" parent="Notes" instance=ExtResource("27_6mhpn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.5328, 3.12548e-07, -50.5032)
 
 [connection signal="bubbles_breathed_in" from="BubbleManager" to="SubViewport/Node3D/Player" method="_on_bubble_manager_bubbles_breathed_in"]
