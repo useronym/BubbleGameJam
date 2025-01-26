@@ -3,7 +3,7 @@ extends Interactible3D
 @export_multiline var text: String
 
 @onready var note_ui = $Note
-@onready var note_ui_label = $Note/RichTextLabel
+@onready var note_ui_label = $Note/TextureRect/RichTextLabel
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
