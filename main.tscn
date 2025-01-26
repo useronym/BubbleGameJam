@@ -1,23 +1,28 @@
-[gd_scene load_steps=24 format=3 uid="uid://piq1qo6dhgdh"]
+[gd_scene load_steps=29 format=3 uid="uid://piq1qo6dhgdh"]
 
 [ext_resource type="PackedScene" uid="uid://brpt71jl5cg2q" path="res://scenes/player.tscn" id="1_8teri"]
 [ext_resource type="Shader" path="res://shaders/ps1.gdshader" id="1_k7buc"]
 [ext_resource type="Texture2D" uid="uid://bfveptx8iejlg" path="res://shaders/damien-ramirez-cg-2.jpg" id="2_l2tep"]
-[ext_resource type="Script" path="res://resize_viewport.gd" id="3_g6vh3"]
 [ext_resource type="PackedScene" uid="uid://b72hjo0h8mcm6" path="res://scenes/lights.tscn" id="3_r2uqw"]
+[ext_resource type="PackedScene" uid="uid://cn77ildhp66sp" path="res://environment/cornerroad.tscn" id="5_rk2qt"]
 [ext_resource type="PackedScene" uid="uid://dyy7qou5v3pbc" path="res://scenes/bubbles/bubble_area_on_ground.tscn" id="5_teoff"]
+[ext_resource type="PackedScene" uid="uid://dvvyaffq6qj2p" path="res://environment/emptyroad.tscn" id="5_uw7jg"]
+[ext_resource type="PackedScene" uid="uid://dgguda57ajbii" path="res://environment/endroad.tscn" id="6_1xvsr"]
+[ext_resource type="PackedScene" uid="uid://06y4ptj1rbp0" path="res://environment/crossroad.tscn" id="6_gbfun"]
+[ext_resource type="PackedScene" uid="uid://djru8fesjxq8n" path="res://environment/onewallroad.tscn" id="7_ssf3u"]
 [ext_resource type="PackedScene" uid="uid://mtsnhob3ue78" path="res://scenes/level.tscn" id="9_ndpwn"]
 [ext_resource type="PackedScene" uid="uid://df7xv0nfo6bja" path="res://scenes/bubbles/bubble_manager.tscn" id="10_alvmu"]
 [ext_resource type="PackedScene" uid="uid://b2clvwp6pfoxk" path="res://scenes/item/items_manager.tscn" id="13_2j1is"]
 [ext_resource type="AudioStream" uid="uid://6hooqjm4cwgd" path="res://environment/audio/bubble_env.wav" id="15_0f3oo"]
-[ext_resource type="PackedScene" uid="uid://8ctxyxkkmgeo" path="res://scenes/item/item_suit.tscn" id="15_3d437"]
-[ext_resource type="PackedScene" uid="uid://nw1hiirwbbl5" path="res://scenes/item/item_helmet.tscn" id="15_pxotq"]
-[ext_resource type="PackedScene" uid="uid://c0k22utsto20l" path="res://scenes/item/item_tank.tscn" id="16_yh77s"]
+[ext_resource type="PackedScene" path="res://scenes/item/item_suit.tscn" id="15_3d437"]
+[ext_resource type="PackedScene" path="res://scenes/item/item_helmet.tscn" id="15_pxotq"]
+[ext_resource type="PackedScene" path="res://scenes/item/item_tank.tscn" id="16_yh77s"]
 [ext_resource type="AudioStream" uid="uid://bw4q73n10c0ss" path="res://environment/audio/harmony_1.wav" id="19_xrs77"]
 [ext_resource type="AudioStream" uid="uid://d34auphr31u7" path="res://environment/audio/harmony_2.wav" id="20_2qe0c"]
 [ext_resource type="AudioStream" uid="uid://cd064vddnu426" path="res://environment/audio/harmony_3.wav" id="21_r51fk"]
 [ext_resource type="AudioStream" uid="uid://dyvpcdtn61qs0" path="res://environment/audio/rythm.wav" id="22_5dyo7"]
 [ext_resource type="AudioStream" uid="uid://3n2bdjdfy8yk" path="res://environment/audio/harmony_4.wav" id="22_q7mg7"]
+[ext_resource type="PackedScene" uid="uid://cgy38weex4et6" path="res://scenes/ending/ending_area.tscn" id="23_wguy0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xegm8"]
 shader = ExtResource("1_k7buc")
@@ -42,16 +47,15 @@ background_mode = 2
 sky = SubResource("Sky_6brtm")
 ambient_light_source = 3
 tonemap_mode = 2
-ssao_enabled = true
 glow_enabled = true
 fog_enabled = true
 fog_mode = 1
 fog_light_color = Color(0.155107, 0.442158, 0.374404, 1)
-fog_light_energy = 0.3
+fog_light_energy = 0.19
 fog_density = 1.0
-fog_depth_curve = 0.5
 fog_depth_begin = 0.0
-fog_depth_end = 10.0
+fog_depth_end = 7.8
+volumetric_fog_density = 0.6537
 volumetric_fog_emission = Color(0.0976419, 0.254903, 0.226907, 1)
 volumetric_fog_emission_energy = 0.0
 
@@ -72,23 +76,23 @@ func _process(delta):
 [node name="SubViewportContainer" type="SubViewportContainer"]
 material = SubResource("ShaderMaterial_xegm8")
 offset_right = 1152.0
-offset_bottom = 648.0
+offset_bottom = 646.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch = true
-script = ExtResource("3_g6vh3")
 
 [node name="SubViewport" type="SubViewport" parent="."]
 handle_input_locally = false
 scaling_3d_scale = 0.25
 audio_listener_enable_3d = true
-size = Vector2i(1152, 648)
+canvas_cull_mask = 4294966273
+size = Vector2i(1152, 646)
 render_target_update_mode = 4
 
 [node name="Node3D" type="Node3D" parent="SubViewport"]
 
 [node name="Player" parent="SubViewport/Node3D" instance=ExtResource("1_8teri")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.303343, 0.144432, 0.293305)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.303343, 0.531423, 0.293305)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewport/Node3D"]
 environment = SubResource("Environment_qbkgc")
@@ -96,6 +100,21 @@ environment = SubResource("Environment_qbkgc")
 [node name="lights" parent="SubViewport/Node3D" instance=ExtResource("3_r2uqw")]
 
 [node name="AllModules" type="Node3D" parent="SubViewport/Node3D"]
+
+[node name="cornerroad" parent="SubViewport/Node3D/AllModules" instance=ExtResource("5_rk2qt")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -13, 0, 1)
+
+[node name="crossroad" parent="SubViewport/Node3D/AllModules" instance=ExtResource("6_gbfun")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 0, 6)
+
+[node name="emptyroad" parent="SubViewport/Node3D/AllModules" instance=ExtResource("5_uw7jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 6)
+
+[node name="endroad" parent="SubViewport/Node3D/AllModules" instance=ExtResource("6_1xvsr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 1)
+
+[node name="onewallroad" parent="SubViewport/Node3D/AllModules" instance=ExtResource("7_ssf3u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, 6)
 
 [node name="level" parent="SubViewport/Node3D" instance=ExtResource("9_ndpwn")]
 
@@ -141,7 +160,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0.69827, -25.5849)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.43889, 0.69827, -0.5849)
 
 [node name="BubbleAreaOnGround2" parent="BubbleManager" instance=ExtResource("5_teoff")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00659204, 0.69827, -8.62754)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.738281, 0.69827, -10.355)
 
 [node name="BubbleAreaOnGround7" parent="BubbleManager" instance=ExtResource("5_teoff")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.85021, 0.69827, 6.15085)
@@ -156,6 +175,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.83134, 0.69827, -15.2542)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8313, 0.69827, -29.9746)
 
 [node name="ItemsManager" parent="." instance=ExtResource("13_2j1is")]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.78072)
 
 [node name="ItemSuit" parent="ItemsManager" instance=ExtResource("15_3d437")]
@@ -209,5 +229,9 @@ volume_db = -12.0
 unit_size = 7.0
 autoplay = true
 panning_strength = 3.0
+
+[node name="EndingArea" parent="." instance=ExtResource("23_wguy0")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.46016)
 
 [connection signal="bubbles_breathed_in" from="BubbleManager" to="SubViewport/Node3D/Player" method="_on_bubble_manager_bubbles_breathed_in"]

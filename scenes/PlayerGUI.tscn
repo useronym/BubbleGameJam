@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scenes/playerGUI.gd" id="1_r6s6h"]
 [ext_resource type="Script" path="res://scenes/pause_node.gd" id="3_81wm1"]
 [ext_resource type="PackedScene" uid="uid://bs035oor8cgug" path="res://scenes/SettingsWindow.tscn" id="4_48uxn"]
-[ext_resource type="PackedScene" uid="uid://2fr2e1iusn1b" path="res://scenes/notes/noteGUI.tscn" id="5_r5rl5"]
+[ext_resource type="PackedScene" uid="uid://2fr2e1iusn1b" path="res://scenes/notes/note.tscn" id="5_r5rl5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wga81"]
 bg_color = Color(0, 0, 0, 0.329412)

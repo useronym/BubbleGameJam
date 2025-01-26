@@ -32,12 +32,15 @@ const INCREMENT_AIR_CAPACITY_VALUE = 50
 
 
 var inputEnabled := true # can the player move?
+
 var aimlookEnabled := true # can the player look around?
 var interactionsEnabled := true # can the player interact with Interactibles3D?
 #region Main control flow 
 
 func _ready():
 	$MeshInstance3D.hide()
+	%EndingArea.ending_started.connect(_on_ending_started)
+	
 	airDepletionTimer.start()
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	GameManager.player = self
@@ -155,4 +158,7 @@ func _on_bubble_manager_bubbles_breathed_in():
 	airDepletionTimer.start()
 	increase_air_capacity()
 	pass # Replace with function body.
+
+func _on_ending_started():
+	self.inputEnabled = false
 #endregion
