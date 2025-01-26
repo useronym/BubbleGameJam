@@ -28,7 +28,7 @@ const JESUS_PULLING_SPEED = 1.0
 
 const MAX_AIR_CAPACITY := 100
 const MIN_AIR_CAPACITY := 0
-const DECREMENT_AIR_CAPACITY_VALUE_SECOND = 2.5
+var DECREMENT_AIR_CAPACITY_VALUE_SECOND = 2.5
 const INCREMENT_AIR_CAPACITY_VALUE = 50
 
 var is_accending = false
@@ -174,10 +174,10 @@ func _on_bubble_manager_bubbles_breathed_in():
 	pass # Replace with function body.
 
 func _on_ending_started(center):
-	#position.x = center.x
-	#position.y = center.y
 	lift_center = center
 	is_moving_to_the_beam_center = true
 	inputEnabled = false
+	DECREMENT_AIR_CAPACITY_VALUE_SECOND = 0
+	$WalkingAudio.stop()
 
 #endregion
