@@ -10,7 +10,6 @@ points = PackedVector3Array(-0.00374379, 0.00331531, -0.00096707, -0.00352923, 0
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_whmde"]
 resource_name = "furniture"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 albedo_texture = ExtResource("3_xujyc")
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
