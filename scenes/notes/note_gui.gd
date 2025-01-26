@@ -16,3 +16,12 @@ func _process(delta: float) -> void:
 			Engine.time_scale = 1
 			visible = false
 			released_e = false
+
+func _unhandled_input(event: InputEvent) -> void:
+	if visible:
+		if released_e && Input.is_key_pressed(KEY_ESCAPE):
+			$CloseSound.play()
+			# Engine.time_scale = 1
+			visible = false
+			released_e = false
+			get_viewport().set_input_as_handled()
