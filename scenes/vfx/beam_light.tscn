@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dungmv0wcxdow"]
+
+[ext_resource type="PackedScene" uid="uid://caf4mg3empgon" path="res://scenes/vfx/beamLight.fbx" id="1_v6iwn"]
+[ext_resource type="Texture2D" uid="uid://br54e15hwh1b7" path="res://scenes/vfx/alpha_gradient.png" id="2_kop5o"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0kmhs"]
+transparency = 1
+blend_mode = 1
+cull_mode = 1
+shading_mode = 0
+disable_fog = true
+albedo_color = Color(1.1, 1.1, 1.1, 0.3)
+albedo_texture = ExtResource("2_kop5o")
+
+[node name="beamLight" instance=ExtResource("1_v6iwn")]
+
+[node name="Cylinder" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_0kmhs")
