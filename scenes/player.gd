@@ -39,7 +39,7 @@ var interactionsEnabled := true # can the player interact with Interactibles3D?
 
 func _ready():
 	$MeshInstance3D.hide()
-	%EndingArea.ending_started.connect(_on_ending_started)
+	#%EndingArea.ending_started.connect(_on_ending_started)
 	
 	airDepletionTimer.start()
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
