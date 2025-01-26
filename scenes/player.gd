@@ -28,7 +28,7 @@ const JESUS_PULLING_SPEED = 1.0
 
 const MAX_AIR_CAPACITY := 100
 const MIN_AIR_CAPACITY := 0
-var DECREMENT_AIR_CAPACITY_VALUE_SECOND = 2.5
+var DECREMENT_AIR_CAPACITY_VALUE_SECOND = 2.25
 const INCREMENT_AIR_CAPACITY_VALUE = 50
 
 var is_accending = false
@@ -109,6 +109,8 @@ func _process_interact():
 	if Input.is_action_just_pressed("interact") && currentBody.CanInteract:
 		currentBody.OnInteract.emit()
 
+var cheat_enabling = 0
+
 # Handles the mouse 🐁🐁🐁🐁🐁🐁🐁🐁
 func _unhandled_input(event : InputEvent):
 	if !aimlookEnabled:
@@ -120,6 +122,17 @@ func _unhandled_input(event : InputEvent):
 		mouseInput.y += event.relative.y
 		self.rotation_degrees.y -= mouseInput.x * mouse_sensitivity
 		head.rotation_degrees.x -= mouseInput.y * mouse_sensitivity
+		
+	# Cheat speed
+	if cheat_enabling == 0 and event is InputEventKey and Input.is_key_pressed(KEY_M):
+		cheat_enabling = 1
+	if cheat_enabling == 1 and event is InputEventKey and Input.is_key_pressed(KEY_E):
+		cheat_enabling = 2
+	if cheat_enabling == 2 and event is InputEventKey and Input.is_key_pressed(KEY_T):
+		cheat_enabling = 3
+	if cheat_enabling == 3 and event is InputEventKey and Input.is_key_pressed(KEY_H):
+		cheat_enabling = 4
+		SPEED = 5
 
 #endregion
 
