@@ -5,11 +5,11 @@
 [node name="Item" instance=ExtResource("1_qj1kf")]
 
 [node name="Area3D" parent="." index="0"]
-text = " [i]I can't keep watching you sink like this and pretend it doesn't affect me anymore. You drag everybody down with you. I didn’t even know it was possible to reach the depths you are in.
+text = "[i]I can't keep watching you sink like this and pretend it doesn't affect me anymore. You drag everybody down with you. I didn’t even know it was possible to reach the depths you are in.
 
-You were always a weak one, no wonder you end up where you are now.[/i]
+You were always a weak one, no wonder you end up where you are now.
 
 So this is it. Don't try to contact me again, I don't want you in my life anymore. Congratulations, you finally drove everybody away. No one can help you.
 
 Goodbye
-"
+[/i]"
