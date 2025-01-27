@@ -28,7 +28,7 @@ const JESUS_PULLING_SPEED = 1.0
 
 const MAX_AIR_CAPACITY := 100
 const MIN_AIR_CAPACITY := 0
-var DECREMENT_AIR_CAPACITY_VALUE_SECOND = 2.1
+var DECREMENT_AIR_CAPACITY_VALUE_SECOND = 2.2
 const INCREMENT_AIR_CAPACITY_VALUE = 50
 
 var is_accending = false
@@ -42,6 +42,8 @@ var interactionsEnabled := true # can the player interact with Interactibles3D?
 
 func _ready():
 	$MeshInstance3D.hide()
+
+	%ItemsManager.all_items_collected.connect(_on_all_items_collected)
 	%EndingArea.ending_started.connect(_on_ending_started)
 	
 	airDepletionTimer.start()
@@ -186,6 +188,9 @@ func _on_bubble_manager_bubbles_breathed_in():
 	airDepletionTimer.start()
 	increase_air_capacity()
 	pass # Replace with function body.
+
+func _on_all_items_collected():
+	DECREMENT_AIR_CAPACITY_VALUE_SECOND = 1.9
 
 func _on_ending_started(center):
 	lift_center = center
