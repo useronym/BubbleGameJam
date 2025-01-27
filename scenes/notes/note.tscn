@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://c4mslqp868uk4"]
+[gd_scene load_steps=8 format=3 uid="uid://c4mslqp868uk4"]
 
 [ext_resource type="Script" path="res://scenes/notes/note.gd" id="1_614se"]
 [ext_resource type="PackedScene" uid="uid://rd31xnvoq5y6" path="res://scenes/notes/assets/letter.fbx" id="2_aldbs"]
 [ext_resource type="PackedScene" uid="uid://2fr2e1iusn1b" path="res://scenes/notes/noteGUI.tscn" id="3_x5v2b"]
 [ext_resource type="Script" path="res://environment/items/float.gd" id="3_y71og"]
 [ext_resource type="AudioStream" uid="uid://t5whlfuqx6hn" path="res://scenes/notes/assets/paper_pick_up_one_shot.wav" id="4_tpg73"]
+[ext_resource type="AudioStream" uid="uid://bj0w2b8s83olj" path="res://scenes/notes/assets/paper_hide_one_shot.wav" id="5_1rslm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7skui"]
 size = Vector3(0.42334, 1.27557, 0.447144)
@@ -27,6 +28,10 @@ range = 0.15
 
 [node name="OpenSound" type="AudioStreamPlayer" parent="Area3D"]
 stream = ExtResource("4_tpg73")
+bus = &"SFX"
+
+[node name="CloseSound" type="AudioStreamPlayer" parent="Area3D"]
+stream = ExtResource("5_1rslm")
 bus = &"SFX"
 
 [node name="Note" parent="Area3D" instance=ExtResource("3_x5v2b")]

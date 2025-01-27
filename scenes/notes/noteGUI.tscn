@@ -1,6 +1,5 @@
-[gd_scene load_steps=5 format=3 uid="uid://2fr2e1iusn1b"]
+[gd_scene load_steps=4 format=3 uid="uid://2fr2e1iusn1b"]
 
-[ext_resource type="Script" path="res://scenes/notes/note_gui.gd" id="1_xfxf8"]
 [ext_resource type="Texture2D" uid="uid://b58qpaye8rh3i" path="res://scenes/notes/assets/soggy_paper.png" id="2_u47dl"]
 [ext_resource type="AudioStream" uid="uid://bj0w2b8s83olj" path="res://scenes/notes/assets/paper_hide_one_shot.wav" id="3_kqhkd"]
 
@@ -71,7 +70,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_xfxf8")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1

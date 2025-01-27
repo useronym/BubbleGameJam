@@ -10,11 +10,22 @@ func _ready() -> void:
 	pass
 	note_ui_label.text = text
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 func _on_interact() -> void:
-	Engine.time_scale = 0
-	$OpenSound.play()
-	note_ui.visible = true
+	set_open(!note_ui.visible)
+	
+func set_open(open: bool):	
+	if open:
+		Engine.time_scale = 0
+		$OpenSound.play()
+		note_ui.visible = true
+	else:
+		Engine.time_scale = 1
+		$CloseSound.play()
+		note_ui.visible = false
+
+func _unhandled_input(event: InputEvent) -> void:
+	if note_ui.visible:
+		if Input.is_key_pressed(KEY_ESCAPE):
+			note_ui.visible = false
+			get_viewport().set_input_as_handled()
