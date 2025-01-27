@@ -28,4 +28,4 @@ func _unhandled_input(event: InputEvent) -> void:
 	if note_ui.visible:
 		if Input.is_key_pressed(KEY_ESCAPE):
 			note_ui.visible = false
-			get_viewport().set_input_as_handled()
+			# get_viewport().set_input_as_handled()
